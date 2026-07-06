@@ -29,6 +29,8 @@ Inter
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+    /* evita o header fixo cortar seção */
 }
 
 body {
@@ -54,6 +56,14 @@ input,
 textarea,
 select {
     font: inherit;
+}
+
+.menu a.active {
+    color: #C9A227;
+}
+
+.menu a.active::after {
+    width: 100%;
 }
 
 
@@ -469,6 +479,95 @@ header {
 ========================================================== */
 
 
+footer {
+    background: linear-gradient(180deg, #0B4F2F 0%, #07361F 100%);
+    color: white;
+    padding: 70px 0 25px;
+    position: relative;
+}
+
+footer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(201, 162, 39, 0.08), transparent 60%);
+    pointer-events: none;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.footer-grid div {
+    transition: .3s ease;
+}
+
+.footer-grid div:hover {
+    transform: translateY(-4px);
+}
+
+footer h4 {
+    font-family: "Bebas Neue", sans-serif;
+    color: #C9A227;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+footer p {
+    color: rgba(255, 255, 255, .75);
+    line-height: 1.8;
+    font-size: .95rem;
+}
+
+.footer-copy {
+    text-align: center;
+    max-width: none;
+    width: 100%;
+    margin: 40px auto 0;
+
+    padding-top: 20px;
+    position: relative;
+
+    opacity: .65;
+    font-size: .85rem;
+}
+
+.footer-copy::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 80%;
+    height: 1px;
+
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, .2),
+            transparent);
+}
+
+.footer-copy a {
+    color: #C9A227;
+    margin-left: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .25s ease;
+    opacity: .9;
+}
+
+.footer-copy a:hover {
+    color: #FFFFFF;
+    opacity: 1;
+}
+
 
 /* ==========================================================
    12. ANIMAÇÕES
@@ -478,6 +577,7 @@ header {
 
     0%,
     100% {
+
         transform: translateY(-10px);
     }
 
@@ -485,25 +585,6 @@ header {
         transform: translateY(10px);
     }
 }
-
-/* ==========================================================
-   13. RESPONSIVIDADE
-========================================================== */
-
-@media (max-width: 900px) {
-    .news-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .club-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .club {
-        text-align: center;
-    }
-}
-
 
 
 /* ==========================================================
@@ -515,14 +596,63 @@ header {
     background: #F7F7F7;
 }
 
-.news-grid {
+.news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+.news-header .section-title {
+    margin-bottom: 0;
+}
+
+.news-controls {
+    display: flex;
+    gap: 12px;
+}
+
+.news-btn {
+    width: 48px;
+    height: 48px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #FFFFFF;
+    color: #0B4F2F;
+
+    font-size: 1.3rem;
+    cursor: pointer;
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .10);
+
+    transition: .25s;
+}
+
+.news-btn:hover {
+    background: #C9A227;
+    color: white;
+}
+
+.news-slider {
+    overflow: hidden;
+}
+
+.news-track {
+    display: flex;
+    transition: .5s ease;
+}
+
+.news-page {
+    min-width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
 .news-card {
-    background: #FFFFFF;
+    background: #FFF;
 
     border-radius: 16px;
 
@@ -530,7 +660,7 @@ header {
 
     box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
 
-    transition: .3s ease;
+    transition: .3s;
 }
 
 .news-card:hover {
@@ -548,7 +678,7 @@ header {
     height: 100%;
     object-fit: cover;
 
-    transition: .5s ease;
+    transition: .5s;
 }
 
 .news-card:hover .news-image img {
@@ -556,48 +686,100 @@ header {
 }
 
 .news-content {
-    padding: 20px;
+    padding: 22px;
 }
 
 .news-tag {
     font-size: .75rem;
-    font-weight: 600;
+    font-weight: 700;
 
     color: #C9A227;
 
-    text-transform: uppercase;
-
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .news-content h3 {
-    font-size: 1.3rem;
-
-    margin-top: 10px;
-    margin-bottom: 10px;
-
+    margin: 12px 0;
+    font-size: 1.35rem;
     color: #0B4F2F;
 }
 
 .news-content p {
-    font-size: .95rem;
     color: #555;
+    font-size: .95rem;
 }
 
 .news-content a {
     display: inline-block;
-
-    margin-top: 12px;
+    margin-top: 14px;
 
     color: #0B4F2F;
     font-weight: 600;
 
-    transition: .2s;
+    transition: .25s;
 }
 
 .news-content a:hover {
     color: #C9A227;
 }
+
+.news-btn:disabled {
+    cursor: default;
+}
+
+.news-btn:disabled:hover {
+    background: #FFFFFF;
+    color: #0B4F2F;
+    transform: none;
+}
+
+
+.news-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.news-dot {
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: #D4D4D4;
+
+    transition: .3s;
+    cursor: pointer;
+}
+
+.news-dots-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    margin-top: 25px;
+    padding-bottom: 10px;
+
+    overflow: visible;
+}
+
+.news-dot.active {
+    background: #0B4F2F;
+    transform: scale(1.2);
+}
+
+.fix-tenis {
+    object-position: center 33%;
+}
+
+.fix-treino {
+    object-position: center 39%;
+}
+
+
 
 /* ==========================================================
    CLUB
@@ -692,39 +874,81 @@ header {
 ========================= */
 
 .sponsors {
-    background: #FFFFFF;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F3F6F4 100%);
     padding: 100px 0;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.sponsors::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(201, 162, 39, 0.04), transparent 65%);
+    pointer-events: none;
 }
 
 .sponsors-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
+    gap: 60px;
 }
 
 .sponsors-master {
+    position: relative;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    gap: 10px;
 }
 
-.sponsors-master.highlight{
-    transform: scale(1.15);
-    margin-bottom: 20px;
+.sponsor-label {
+    font-size: .75rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: #0B4F2F;
+    text-transform: uppercase;
+    opacity: .85;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.sponsors-master.highlight img{
+.sponsor-label::before,
+.sponsor-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(201, 162, 39, .5);
+}
+
+.sponsors-master.highlight {
+    transform: scale(1.25);
+    position: relative;
+}
+
+.sponsors-master.highlight::before {
+    position: absolute;
+    top: -30px;
+    font-size: .75rem;
+    letter-spacing: 2px;
+    color: #0B4F2F;
+    font-weight: 700;
+}
+
+.sponsors-master.highlight img {
     transition: .3s ease;
 }
 
-.sponsors-master.highlight:hover img{
+.sponsors-master.highlight:hover img {
     transform: scale(1.08);
-    filter: drop-shadow(0 10px 25px rgba(0,0,0,.15));
+    filter: drop-shadow(0 10px 25px rgba(0, 0, 0, .15));
 }
 
-.sponsors-master.highlight:hover img{
+.sponsors-master.highlight:hover img {
     filter: brightness(1.05);
 }
 
@@ -751,7 +975,7 @@ header {
     transform: scale(1.05);
 }
 
-.sponsors-support{
+.sponsors-support {
     display: flex;
     justify-content: center;
     gap: 30px;
@@ -769,18 +993,19 @@ header {
 }
 
 .sponsor-item {
-    background: #FFFFFF;
-    height: 110px;
+    background: linear-gradient(145deg, #ffffff, #f6f6f6);
+    border: 1px solid rgba(11, 79, 47, 0.08);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .06);
 
+    height: 110px;
     display: flex;
     align-items: center;
     justify-content: center;
 
     border-radius: 14px;
-
-    box-shadow: 0 10px 25px rgba(0, 0, 0, .06);
-
     padding: 20px;
+
+    transition: .25s ease;
 }
 
 .sponsor-item img {
@@ -789,23 +1014,300 @@ header {
 
     object-fit: contain;
 
-    filter: grayscale(20%);
+    filter: grayscale(30%);
+    opacity: .85;
+    transition: .3s ease;
+}
+
+.sponsor-item.hover {
+    transform: scale(1.05);
     transition: .25s ease;
 }
 
 .sponsor-item:hover img {
     filter: grayscale(0%);
-    transform: scale(1.05);
+    opacity: 1;
+    transform: scale(1.06);
 }
 
-.sponsor-item.small{
+.sponsor-item.small {
     height: 85px;
     opacity: .75;
 }
 
 .sponsor-item img,
-.sponsors-master img{
+.sponsors-master img {
     max-width: 100%;
     max-height: 60px;
     object-fit: contain;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+
+/* =========================
+   Menu hamburguer desktop
+========================= */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #fff;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+@media (max-width: 900px) {
+
+/* =========================
+    MENUS E NAVBAR
+========================= */
+
+    .navbar {
+        height: auto;
+        padding: 14px 0;
+    }
+
+    .logo {
+        line-height: 1.2;
+    }
+
+    .club-name {
+        font-size: 1.4rem;
+    }
+     .menu {
+        position: absolute;
+        top: 72px;
+        right: 0;
+        background: #0B4F2F;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+
+        padding: 25px 0;
+
+        transform: translateY(-20px);
+        opacity: 0;
+        pointer-events: none;
+        transition: .3s ease;
+    }
+
+     .menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translateY(8px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px);
+    }
+    
+    .btn.btn-primary {
+        padding: 10px 18px;
+        font-size: .85rem;
+    }
+    
+/* =========================
+    HERO
+========================= */
+
+    .hero-crest {
+        display: none;
+    }
+
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-crest {
+        width: 220px;
+    }
+
+    .hero-line {
+        margin: 20px auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+/* =========================
+    NOTICIAS
+========================= */
+
+    .news-page {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .news-track {
+        display: flex;
+        gap: 16px;
+
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+
+        scroll-behavior: smooth;
+    }
+
+    .news-page {
+        display: contents;
+        /* IMPORTANTÍSSIMO: ignora o "slider por páginas" */
+    }
+
+    .news-card {
+        flex: 0 0 85%;
+        scroll-snap-align: start;
+    }
+
+    /* esconde botões no mobile */
+    .news-controls {
+        display: none;
+    }
+
+    .news-dots-wrapper {
+        display: none;
+    }    
+
+/* =========================
+    CLUB
+========================= */
+
+    .club {
+        text-align: center;
+    }
+
+    .club-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .club-image {
+        order: -1;
+    }
+
+/* =========================
+    HTML
+========================= */
+
+    section {
+        padding: 60px 0;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+    }
+
+    p {
+        max-width: 100%;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+/* =========================
+    PATROCINADORES
+========================= */
+
+    .sponsors-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    /* MASTER continua igual */
+    .sponsors-master {
+        text-align: center;
+    }
+
+    .sponsors-master img {
+        max-width: 200px;
+    }
+
+    /* LINHA 1: dois lado a lado */
+    .sponsors-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        width: 100%;
+    }
+
+    /* LINHA 2: SERRA sozinho centralizado */
+    .sponsors-grid .sponsor-item:nth-child(3) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 60%;
+    }
+
+    /* LINHA 3: AGRO + UNIÃO continuam normais */
+    .sponsors-support {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        width: 100%;
+    }
+
+    /* LINHA 4: HIDROVALE sozinho central */
+    .sponsors-support .sponsor-item.small:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: 60%;
+    }
+
+    /* cards padrão */
+    .sponsor-item {
+        height: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sponsor-item img {
+        max-height: 45px;
+        max-width: 80%;
+        object-fit: contain;
+    }
+
+/* =========================
+    FOOTER
+========================= */
+    .footer-copy {
+        font-size: .8rem;
+        padding: 15px 10px 0;
+    }
 }

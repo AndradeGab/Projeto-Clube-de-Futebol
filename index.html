@@ -10,7 +10,7 @@
     <meta name="description"
         content="Site oficial do Clube Atlético Vale do Cedro. Notícias, elenco, estrutura, história, Arena do Cedro e Centro de Treinamento José Carvalho.">
 
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -18,65 +18,48 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-
-    <link rel="icon" href="assets/logo/favicon.png">
+    <link rel="icon" href="imgs/escudo.png">
 </head>
 
 <body>
 
-    <!-- ==========================================================
-                            HEADER
-    =========================================================== -->
-
+    <!-- ================= HEADER ================= -->
     <header>
-
         <div class="container">
-
             <nav class="navbar">
-
-                <!-- Marca textual -->
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
                 <div class="logo">
-
                     <span class="club-name">CAVC</span>
                     <small>Clube Atlético Vale do Cedro</small>
-
                 </div>
 
-                <!-- Menu -->
                 <ul class="menu">
-
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Clube</a></li>
-                    <li><a href="#">Futebol</a></li>
-                    <li><a href="#">Estrutura</a></li>
-                    <li><a href="#">Notícias</a></li>
-                    <li><a href="#">Contato</a></li>
-
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#noticias">Notícias</a></li>
+                    <li><a href="#clube">Clube</a></li>
+                    <li><a href="#estrutura">Estrutura</a></li>
+                    <li><a href="#futebol">Futebol</a></li>
+                    <li><a href="#contato">Contato</a></li>
                 </ul>
 
-                <!-- CTA -->
-                <a href="#" class="btn btn-primary">
-                    SEJA SÓCIO
-                </a>
+                <a href="#" class="btn btn-primary">SEJA SÓCIO</a>
 
             </nav>
-
         </div>
-
     </header>
 
-    <!-- ==========================================================
-                        HERO
-========================================================== -->
-
-    <section class="hero">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="inicio">
 
         <div class="hero-overlay"></div>
 
         <div class="container">
 
             <div class="hero-content">
-
                 <span class="hero-tag">FUNDADO EM 2018</span>
 
                 <h1>
@@ -86,9 +69,7 @@
 
                 <div class="hero-line"></div>
 
-                <p class="hero-motto">
-                    Nossa força nasce no Vale.
-                </p>
+                <p class="hero-motto">Nossa força nasce no Vale.</p>
 
                 <p class="hero-description">
                     Representando o interior catarinense com paixão, organização e o compromisso de formar grandes
@@ -96,168 +77,165 @@
                 </p>
 
                 <div class="hero-buttons">
-
-                    <a href="#" class="btn btn-primary">
-                        Conheça o Clube
-                    </a>
-
-                    <a href="#" class="btn btn-outline">
-                        Últimas Notícias
-                    </a>
-
+                    <a href="#" class="btn btn-primary">Conheça o Clube</a>
+                    <a href="#" class="btn btn-outline">Últimas Notícias</a>
                 </div>
-
             </div>
 
-            <!-- 🦁 ESCUDO NO HERO (DIREITA) -->
             <img src="imgs/escudo.png" class="hero-crest" alt="Escudo do CAVC">
 
         </div>
-
     </section>
 
-    <!-- ==========================================================
-                            NOTÍCIAS
-    =========================================================== -->
-
-    <section class="news">
+    <!-- ================= NEWS ================= -->
+    <section class="news" id="noticias">
 
         <div class="container">
 
-            <h2 class="section-title">
-                Últimas Notícias
-            </h2>
+            <div class="news-header">
+                <h2 class="section-title">Últimas Notícias</h2>
 
-            <div class="news-grid">
-
-                <!-- CARD 1 -->
-                <article class="news-card">
-
-                    <div class="news-image">
-                        <img src="imgs/kenji.png" alt="Kenji Nakamura">
-                    </div>
-
-                    <div class="news-content">
-
-                        <span class="news-tag">Mercado da Bola</span>
-
-                        <h3>
-                            Kenji Nakamura é o novo goleiro do CAVC
-                        </h3>
-
-                        <p>
-                            Goleiro japonês chega para reforçar o elenco na temporada 2026.
-                        </p>
-
-                        <a href="#">Ler mais →</a>
-
-                    </div>
-
-                </article>
-
-                <!-- CARD 2 -->
-                <article class="news-card">
-
-                    <div class="news-image">
-                        <img src="imgs/ct.png" alt="CT José Carvalho">
-                    </div>
-
-                    <div class="news-content">
-
-                        <span class="news-tag">Estrutura</span>
-
-                        <h3>
-                            CT José Carvalho passa por modernização completa
-                        </h3>
-
-                        <p>
-                            Clube investe em tecnologia e performance para o elenco profissional.
-                        </p>
-
-                        <a href="#">Ler mais →</a>
-
-                    </div>
-
-                </article>
-
-                <!-- CARD 3 -->
-                <article class="news-card">
-
-                    <div class="news-image">
-                        <img src="imgs/uniforme.png" alt="Novo uniforme CAVC">
-                    </div>
-
-                    <div class="news-content">
-
-                        <span class="news-tag">Clube</span>
-
-                        <h3>
-                            CAVC apresenta novo uniforme 2026
-                        </h3>
-
-                        <p>
-                            As novas cores reforçam a identidade do Leão do Vale.
-                        </p>
-
-                        <a href="#">Ler mais →</a>
-
-                    </div>
-
-                </article>
-
+                <div class="news-controls">
+                    <button class="news-btn" id="prevNews">&#10094;</button>
+                    <button class="news-btn" id="nextNews">&#10095;</button>
+                </div>
             </div>
 
-        </div>
+            <div class="news-slider">
 
+                <div class="news-track">
+
+                    <div class="news-page">
+
+                        <!-- CARD 1 -->
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img src="imgs/kenji.png" alt="Kenji Nakamura">
+                            </div>
+                            <div class="news-content">
+                                <span class="news-tag">Mercado da Bola</span>
+                                <h3>Kenji Nakamura é o novo goleiro do CAVC</h3>
+                                <p>Goleiro japonês chega para reforçar o elenco na temporada 2026.</p>
+                                <a href="#">Ler mais →</a>
+                            </div>
+                        </article>
+
+                        <!-- CARD 2 -->
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img src="imgs/ct.png" alt="CT José Carvalho">
+                            </div>
+                            <div class="news-content">
+                                <span class="news-tag">Estrutura</span>
+                                <h3>CT José Carvalho passa por modernização completa</h3>
+                                <p>Clube investe em tecnologia e performance para o elenco profissional.</p>
+                                <a href="#">Ler mais →</a>
+                            </div>
+                        </article>
+
+                        <!-- CARD 3 -->
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img src="imgs/uniforme.png" alt="Novo uniforme">
+                            </div>
+                            <div class="news-content">
+                                <span class="news-tag">Clube</span>
+                                <h3>CAVC apresenta novo uniforme 2026</h3>
+                                <p>As novas cores reforçam a identidade do Leão do Vale.</p>
+                                <a href="#">Ler mais →</a>
+                            </div>
+                        </article>
+
+                    </div>
+
+                    <div class="news-page">
+
+                        <!-- CARD 4 -->
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img src="imgs/tenis.jpeg" class="fix-tenis" alt="Tênis de Mesa">
+                            </div>
+                            <div class="news-content">
+                                <span class="news-tag">Modernização</span>
+                                <h3>CAVC amplia seus horizontes e anuncia tênis de mesa</h3>
+                                <p>Gabriel Maeda e Priscila Takahashi são os primeiros atletas.</p>
+                                <a href="#">Ler mais →</a>
+                            </div>
+                        </article>
+
+                        <!-- CARD 5 -->
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img src="imgs/sub20.jpeg" alt="Sub-20">
+                            </div>
+                            <div class="news-content">
+                                <span class="news-tag">Desenvolvimento</span>
+                                <h3>Sub-20 intensifica preparação</h3>
+                                <p>O futuro do clube segue sendo construído no CT José Carvalho.</p>
+                                <a href="#">Ler mais →</a>
+                            </div>
+                        </article>
+
+                        <!-- CARD 6 -->
+                        <article class="news-card">
+                            <div class="news-image">
+                                <img src="imgs/uniformetreino.jpeg" class="fix-treino" alt="Uniforme treino">
+                            </div>
+                            <div class="news-content">
+                                <span class="news-tag">Lançamento</span>
+                                <h3>Novos uniformes de treino</h3>
+                                <p>Desenvolvidos pela Titan Sports para a temporada.</p>
+                                <a href="#">Ler mais →</a>
+                            </div>
+
+                        </article>
+                    </div>
+
+                </div>
+                <div class="news-dots-wrapper">
+                    <div class="news-dots">
+                        <span class="news-dot active" data-page="0"></span>
+                        <span class="news-dot" data-page="1"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- ==========================================================
-                            SOBRE O CLUBE
-    =========================================================== -->
-
-    <section class="club">
+    <!-- ================= CLUB ================= -->
+    <section class="club" id="clube">
 
         <div class="container">
 
-            <h2 class="section-title">
-                O Clube
-            </h2>
+            <h2 class="section-title">O Clube</h2>
 
             <div class="club-grid">
 
-                <!-- TEXTO -->
                 <div class="club-text">
 
-                    <h3>
-                        Um clube nascido no coração do Vale
-                    </h3>
+                    <h3>Clube Atlético Vale do Cedro</h3>
 
                     <p>
-                        Fundado em 15 de março de 2018, o Clube Atlético Vale do Cedro
-                        representa a cidade fictícia de Vale do Cedro, em Santa Catarina.
+                        Fundado em <strong>15 de março de 2018</strong>, o CAVC representa a cidade fictícia de
+                        Vale do Cedro, no interior de Santa Catarina.
                     </p>
 
                     <p>
-                        Com gestão moderna e foco no desenvolvimento de atletas,
-                        o CAVC busca crescimento sustentável dentro e fora de campo.
+                        Conhecido como <strong>Leão do Vale</strong>, o clube se destaca pela gestão moderna,
+                        formação de atletas e identidade forte no futebol do interior.
                     </p>
 
                     <p>
-                        Conhecido como <strong>Leão do Vale</strong>,
-                        o clube carrega as cores verde escuro e dourado como símbolo de sua identidade.
+                        Suas cores oficiais — verde escuro, dourado e branco — simbolizam tradição,
+                        força e ambição esportiva.
                     </p>
 
-                    <a href="#" class="btn btn-secondary">
-                        História completa
-                    </a>
+                    <a href="#" class="btn btn-secondary">História completa</a>
 
                 </div>
 
-                <!-- IMAGEM -->
                 <div class="club-image">
-
                     <img src="imgs/estadio2.png" alt="Arena do Cedro" id="arenaThumb">
-
                 </div>
 
             </div>
@@ -265,33 +243,26 @@
         </div>
 
     </section>
-
-    <!-- ==========================================================
-                            PATROCINADORES
-    =========================================================== -->
-
-    <section class="sponsors">
+    <!-- ================= SPONSORS ================= -->
+    <section class="sponsors" id="estrutura">
 
         <div class="container">
 
             <h2 class="section-title">Patrocinadores Oficiais</h2>
 
-            <!-- WRAPPER GERAL -->
             <div class="sponsors-wrapper">
 
-                <!-- MASTER -->
                 <div class="sponsors-master highlight">
+                    <span class="sponsor-label">Patrocinador Master</span>
                     <img src="imgs/cedroEnergia.png" alt="Cedro Energia">
                 </div>
 
-                <!-- GRID PRINCIPAL -->
                 <div class="sponsors-grid">
                     <div class="sponsor-item"><img src="imgs/titanSports.png"></div>
                     <div class="sponsor-item"><img src="imgs/valeConstrutora.png"></div>
                     <div class="sponsor-item"><img src="imgs/serra.png"></div>
                 </div>
 
-                <!-- APOIO -->
                 <div class="sponsors-support">
                     <div class="sponsor-item small"><img src="imgs/agroCampo.png"></div>
                     <div class="sponsor-item small"><img src="imgs/supermercadosUnião.png"></div>
@@ -301,31 +272,47 @@
             </div>
 
         </div>
-
     </section>
 
-    <!-- ==========================================================
-                            FOOTER
-    =========================================================== -->
-
+    <!-- ================= FOOTER ================= -->
     <footer>
-
         <div class="container">
 
-            <p>
-                © 2026 Clube Atlético Vale do Cedro — Todos os direitos reservados.
-            </p>
+            <div class="footer-grid">
+
+                <div>
+                    <h4>CAVC</h4>
+                    <p>Clube Atlético Vale do Cedro</p>
+                </div>
+
+                <div>
+                    <h4>Clube</h4>
+                    <p>História<br>Estrutura<br>Elenco</p>
+                </div>
+
+                <div>
+                    <h4>Contato</h4>
+                    <p>Imprensa<br>Sócios<br>Marketing</p>
+                </div>
+
+            </div>
 
         </div>
 
+        <p class="footer-copy">
+            © 2026 Clube Atlético Vale do Cedro — Todos os direitos reservados.
+            <a href="https://www.linkedin.com/in/gabriel-andrade-a26025319/" target="_blank" rel="noopener">
+                Gabriel Andrade (LinkedIn)
+            </a>
+        </p>
     </footer>
+
+    <!-- ================= LIGHTBOX ================= -->
     <div class="lightbox" id="lightbox">
-
         <span class="lightbox-close" id="closeLightbox">×</span>
-
         <img src="" alt="Imagem ampliada" id="lightboxImg">
-
     </div>
+
     <script src="script.js"></script>
 </body>
 
