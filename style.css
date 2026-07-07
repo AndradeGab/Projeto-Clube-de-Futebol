@@ -454,13 +454,6 @@ header {
 
 }
 
-
-/* ==========================================================
-   9. CARDS
-========================================================== */
-
-
-
 /* ==========================================================
    10. SEÇÕES
 ========================================================== */
@@ -869,6 +862,342 @@ footer p {
     transform: scale(1);
 }
 
+.history-content {
+
+    max-height:0;
+    overflow:hidden;
+
+    opacity:0;
+
+    margin-top:0;
+
+    transition:.5s ease;
+
+}
+
+
+.history-content.active {
+
+    max-height:800px;
+
+    opacity:1;
+
+    margin-top:35px;
+
+}
+
+
+.history-content h4 {
+
+    font-size:1.8rem;
+
+    margin-bottom:20px;
+
+}
+
+
+.history-content p {
+
+    margin-bottom:18px;
+
+}
+
+/* ==========================================================
+   HINO OFICIAL
+========================================================== */
+
+
+.anthem-box {
+
+    margin-top:50px;
+
+    padding-top:40px;
+
+    border-top:1px solid rgba(11,79,47,.15);
+
+}
+
+
+.anthem-header span {
+
+    font-size:.75rem;
+
+    letter-spacing:3px;
+
+    color:#C9A227;
+
+    font-weight:700;
+
+}
+
+
+.anthem-header h4 {
+
+    font-size:2rem;
+
+    margin:8px 0;
+
+}
+
+
+.anthem-header p {
+
+    color:#666;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.anthem-button {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+
+    padding:14px 28px;
+
+    background:#0B4F2F;
+    color:white;
+
+    border:none;
+    border-radius:999px;
+
+    font-weight:600;
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.anthem-button i {
+    font-size:1.3rem;
+}
+
+.anthem-button:hover {
+    background:#197A43;
+    transform:translateY(-3px);
+}
+
+#playPause {
+
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+    border:none;
+
+    background:#C9A227;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+
+#playPause i {
+    font-size:1.4rem;
+}
+
+
+#playPause:hover {
+    transform:scale(1.1);
+}
+
+
+.anthem-button:hover {
+
+    background:#197A43;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+.anthem-player {
+
+    margin-top:25px;
+
+    padding:22px 28px;
+
+    border-radius:18px;
+
+    background:
+
+    linear-gradient(135deg,#0B4F2F,#07361F);
+
+
+    color:white;
+
+
+    display:none;
+
+    align-items:center;
+
+    gap:25px;
+
+
+    box-shadow:
+
+    0 15px 35px rgba(0,0,0,.18);
+
+}
+
+
+
+.anthem-player.active {
+
+    display:flex;
+
+    animation:anthemShow .35s ease;
+
+}
+
+
+
+.anthem-icon {
+
+    width:55px;
+
+    height:55px;
+
+    background:#C9A227;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.5rem;
+
+}
+
+
+
+.anthem-info {
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+
+
+.anthem-info strong {
+
+    color:white;
+
+    font-family:"Inter",sans-serif;
+
+}
+
+
+.anthem-info span {
+
+    color:rgba(255,255,255,.7);
+
+    font-size:.9rem;
+
+}
+
+
+
+.anthem-controls {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+
+
+.anthem-controls button {
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:#C9A227;
+
+    cursor:pointer;
+
+    font-size:1rem;
+
+}
+
+
+
+.volume-box {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+
+.volume-box input {
+
+    width:100px;
+
+}
+
+
+
+@keyframes anthemShow {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+@media(max-width:900px){
+
+    .anthem-player{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+}
 /* =========================
    SPONSORS
 ========================= */
@@ -1042,6 +1371,375 @@ footer p {
     object-fit: contain;
 }
 
+/* ==========================================================
+   ELENCO
+========================================================== */
+
+.squad {
+    background: #fff;
+    padding: 100px 0;
+}
+
+.squad-grid {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.squad-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .15);
+}
+
+.squad-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .4s;
+}
+
+.squad-image:hover img {
+    transform: scale(1.05);
+}
+
+.squad-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(11, 79, 47, .72);
+
+    opacity: 0;
+    transition: .3s;
+}
+
+.squad-image:hover .squad-overlay {
+    opacity: 1;
+}
+
+.squad-overlay span {
+    color: #fff;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.section-mini {
+    color: #C9A227;
+    font-size: .85rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+}
+
+.squad-content h2 {
+    margin-bottom: 25px;
+}
+
+.squad-content p {
+    margin-bottom: 18px;
+    color: #555;
+}
+
+.squad-stats {
+    display: flex;
+    gap: 45px;
+    margin: 35px 0 40px;
+}
+
+.squad-stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.squad-stats strong {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 3rem;
+    color: #0B4F2F;
+    line-height: 1;
+}
+
+.squad-stats span {
+    color: #666;
+    margin-top: 6px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.gallery-modal {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, .9);
+
+    z-index: 99999;
+}
+
+.gallery-modal.active {
+    display: flex;
+}
+
+.gallery-content {
+    width: min(1100px, 92vw);
+    background: #fff;
+    border-radius: 18px;
+    padding: 35px;
+    position: relative;
+    animation: fade .25s;
+}
+
+.gallery-content h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.gallery-content img {
+    width: 100%;
+    border-radius: 14px;
+}
+
+.gallery-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.gallery-buttons button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 999px;
+
+    background: #0B4F2F;
+    color: #fff;
+
+    cursor: pointer;
+    transition: .25s;
+}
+
+.gallery-buttons button:hover {
+    background: #197A43;
+}
+
+.gallery-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+
+    border: none;
+    background: none;
+
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.squad-btn {
+    display: inline-flex;
+    padding: 14px 28px;
+    margin: 18px 0 40px;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* ==========================================================
+   CONTATO
+========================================================== */
+
+.contact {
+    background: #F7F7F7;
+    padding: 100px 0;
+}
+
+
+.contact-grid {
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+
+    align-items: center;
+
+}
+
+
+.contact-info h3 {
+
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+
+}
+
+
+.contact-info p {
+
+    color: #555;
+    margin-bottom: 35px;
+
+}
+
+
+
+.contact-item {
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 22px;
+
+}
+
+
+.contact-item strong {
+
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.3rem;
+    color: #0B4F2F;
+
+    letter-spacing: 1px;
+
+}
+
+
+.contact-item span {
+
+    color: #666;
+
+}
+
+
+
+.contact-form {
+
+    background: #FFFFFF;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+
+}
+
+
+.contact-form h3 {
+
+    margin-bottom: 25px;
+
+}
+
+
+.contact-form form {
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+
+.contact-form input,
+.contact-form textarea,
+.contact-form select {
+
+    width: 100%;
+
+    padding: 14px 18px;
+
+    border-radius: 10px;
+
+    border: 1px solid #ddd;
+
+    background: #fafafa;
+
+    outline: none;
+
+    transition: .25s;
+
+}
+
+
+.contact-form textarea {
+
+    height: 130px;
+    resize: none;
+
+}
+
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus {
+
+    border-color: #0B4F2F;
+
+}
+
+
+
+.contact-form button {
+
+    margin-top: 10px;
+
+}
+
+.contact-note {
+
+    display: block;
+
+    margin-top: 18px;
+
+    font-size: .75rem;
+
+    line-height: 1.6;
+
+    color: #777;
+
+}
+
+
+.contact-note a {
+
+    color: #0B4F2F;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: .25s;
+
+}
+
+
+.contact-note a:hover {
+
+    color: #C9A227;
+
+}
+
 /* =========================
    MOBILE
 ========================= */
@@ -1068,7 +1766,7 @@ footer p {
 
 @media (max-width: 900px) {
 
-/* =========================
+    /* =========================
     MENUS E NAVBAR
 ========================= */
 
@@ -1084,7 +1782,8 @@ footer p {
     .club-name {
         font-size: 1.4rem;
     }
-     .menu {
+
+    .menu {
         position: absolute;
         top: 72px;
         right: 0;
@@ -1102,7 +1801,7 @@ footer p {
         transition: .3s ease;
     }
 
-     .menu.active {
+    .menu.active {
         transform: translateY(0);
         opacity: 1;
         pointer-events: auto;
@@ -1123,13 +1822,13 @@ footer p {
     .hamburger.active span:nth-child(3) {
         transform: rotate(-45deg) translateY(-8px);
     }
-    
+
     .btn.btn-primary {
         padding: 10px 18px;
         font-size: .85rem;
     }
-    
-/* =========================
+
+    /* =========================
     HERO
 ========================= */
 
@@ -1159,7 +1858,7 @@ footer p {
         justify-content: center;
     }
 
-/* =========================
+    /* =========================
     NOTICIAS
 ========================= */
 
@@ -1196,9 +1895,9 @@ footer p {
 
     .news-dots-wrapper {
         display: none;
-    }    
+    }
 
-/* =========================
+    /* =========================
     CLUB
 ========================= */
 
@@ -1215,7 +1914,7 @@ footer p {
         order: -1;
     }
 
-/* =========================
+    /* =========================
     HTML
 ========================= */
 
@@ -1239,7 +1938,7 @@ footer p {
         width: 92%;
     }
 
-/* =========================
+    /* =========================
     PATROCINADORES
 ========================= */
 
@@ -1303,11 +2002,46 @@ footer p {
         object-fit: contain;
     }
 
+    .squad-grid {
+
+        grid-template-columns: 1fr;
+        gap: 35px;
+
+    }
+
+    .squad-content {
+
+        text-align: center;
+
+    }
+
+    .squad-stats {
+
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+
+    }
+
+    .contact-grid {
+
+        grid-template-columns: 1fr;
+        gap: 40px;
+
+    }
+
+    .contact-info {
+
+        text-align: center;
+
+    }
+
+}
+
 /* =========================
     FOOTER
 ========================= */
-    .footer-copy {
-        font-size: .8rem;
-        padding: 15px 10px 0;
-    }
+.footer-copy {
+    font-size: .8rem;
+    padding: 15px 10px 0;
 }

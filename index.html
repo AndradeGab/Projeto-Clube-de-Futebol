@@ -19,6 +19,7 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="imgs/escudo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
 <body>
@@ -46,7 +47,7 @@
                     <li><a href="#contato">Contato</a></li>
                 </ul>
 
-                <a href="#" class="btn btn-primary">SEJA SÓCIO</a>
+                <a href="#contato" class="btn btn-primary">SEJA SÓCIO</a>
 
             </nav>
         </div>
@@ -230,8 +231,128 @@
                         força e ambição esportiva.
                     </p>
 
-                    <a href="#" class="btn btn-secondary">História completa</a>
+                    <a href="#" class="btn btn-secondary" id="historyButton">
+                        História completa
+                    </a>
 
+                    <div class="history-content" id="historyContent">
+
+                        <h4>Uma história construída no Vale</h4>
+
+                        <p>
+                            Fundado em 15 de março de 2018, o Clube Atlético Vale do Cedro nasceu
+                            com o objetivo de representar uma nova geração do futebol catarinense.
+                            O que começou como uma academia de preparação de atletas evoluiu para um
+                            projeto ainda maior, transformando-se em um clube profissional e abrindo
+                            um novo capítulo na história do futebol catarinense.
+                            A ideia partiu do diretor Rodrigo Andrade, que idealizou um novo patamar
+                            para o desenvolvimento esportivo na região.
+                            Desde o início, o projeto foi baseado em três pilares:
+                            organização, desenvolvimento de atletas e conexão com a comunidade.
+                        </p>
+
+                        <p>
+                            Com uma identidade inspirada na força do interior, o clube adotou o
+                            apelido de <strong>Leão do Vale</strong>, símbolo de coragem,
+                            determinação e espírito competitivo.
+                        </p>
+
+                        <p>
+                            Nos primeiros anos, o CAVC concentrou seus esforços na construção de
+                            uma estrutura sólida, investindo nas categorias de base e na formação
+                            de profissionais preparados para o futebol moderno.
+                        </p>
+
+                        <p>
+                            A inauguração da Arena do Cedro e do Centro de Treinamento José Carvalho
+                            marcou uma nova fase na história do clube, permitindo que atletas e
+                            comissão técnica tivessem uma estrutura compatível com grandes projetos
+                            esportivos.
+                        </p>
+
+                        <p>
+                            Atualmente, o Clube Atlético Vale do Cedro representa a ambição de um
+                            clube jovem, moderno e conectado com sua torcida, buscando escrever
+                            novos capítulos dentro e fora dos gramados.
+                        </p>
+
+                    </div>
+                    <div class="anthem-box">
+
+                        <div class="anthem-header">
+
+                            <span>
+                                HINO OFICIAL
+                            </span>
+
+                            <h4>
+                                A Voz do Leão do Vale
+                            </h4>
+
+                            <p>
+                                A canção que representa a paixão e a coragem da torcida do CAVC. Esse hino ecoou pelo estádio quando o próprio cantor Pedro Vitor decidiu tomar o microfone do narrador e puxou a torcida pra cantar o hino do leão quando estavamos 1x1. Conseguimos virar o jogo e vencer grandiosamente.
+                            </p>
+
+                        </div>
+
+
+                        <button class="anthem-button" id="anthemButton">
+                            <i class="bi bi-play-circle-fill"></i>
+                            Ouvir Hino Oficial
+                        </button>
+
+
+                        <div class="anthem-player" id="anthemPlayer">
+
+                            <div class="anthem-icon">
+                                <i class="bi bi-music-note-beamed"></i>
+                            </div>
+
+
+                            <div class="anthem-info">
+
+                                <strong>
+                                    Clube Atlético Vale do Cedro
+                                </strong>
+
+                                <span>
+                                    Hino Oficial
+                                </span>
+
+                            </div>
+
+
+                            <div class="anthem-controls">
+
+                                <button id="playPause">
+                                    <i class="bi bi-play-fill"></i>
+                                </button>
+
+
+                                <div class="volume-box">
+
+                                    <span>
+                                        <i class="bi bi-volume-up-fill"></i>
+                                    </span>
+
+                                    <input type="range" id="volume" min="0" max="1" step="0.01" value="0.8">
+
+                                </div>
+
+
+                            </div>
+
+
+                            <audio id="anthemAudio">
+
+                                <source src="audio/CAVC.mp3" type="audio/mpeg">
+
+                            </audio>
+
+
+                        </div>
+
+                    </div>
                 </div>
 
                 <div class="club-image">
@@ -274,6 +395,199 @@
         </div>
     </section>
 
+    <!-- ================= ELENCO ================= -->
+    <section class="squad" id="futebol">
+
+        <div class="container">
+
+            <div class="squad-grid">
+
+                <div class="squad-image" id="squadOpen">
+
+                    <img src="imgs/diretoria.png" alt="Elenco Profissional">
+
+                    <div class="squad-overlay">
+                        <span>VER ELENCO COMPLETO</span>
+                    </div>
+
+                </div>
+
+                <div class="squad-content">
+
+                    <span class="section-mini">
+                        DEPARTAMENTO DE FUTEBOL
+                    </span>
+
+                    <h2>Elenco Profissional</h2>
+
+                    <p>
+                        O elenco profissional do Clube Atlético Vale do Cedro é formado
+                        por atletas comprometidos com disciplina,
+                        desenvolvimento e competitividade.
+                    </p>
+
+                    <p>
+                        O trabalho diário é realizado no Centro de Treinamento José Carvalho,
+                        reunindo jogadores, comissão técnica e profissionais especializados.
+                    </p>
+
+                    <a href="javascript:void(0)" class="btn btn-primary squad-btn">
+                        Conhecer o elenco
+                    </a>
+
+                    <div class="squad-stats">
+
+                        <div>
+                            <strong>28</strong>
+                            <span>Atletas</span>
+                        </div>
+
+                        <div>
+                            <strong>11</strong>
+                            <span>Comissão Técnica</span>
+                        </div>
+
+                        <div>
+                            <strong>2026</strong>
+                            <span>Temporada</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <div class="gallery-modal" id="galleryModal">
+
+        <div class="gallery-content">
+
+            <button class="gallery-close">
+                ✕
+            </button>
+
+            <h2>Elenco Profissional</h2>
+
+            <img id="galleryImage" src="imgs/equipe.png">
+
+            <div class="gallery-buttons">
+
+                <button data-image="imgs/diretoria.png">
+
+                    Foto Oficial
+
+                </button>
+
+                <button data-image="imgs/equipe.png">
+
+                    Jogadores
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ================= CONTATO ================= -->
+    <section class="contact" id="contato">
+
+        <div class="container">
+
+            <h2 class="section-title">Entre em Contato</h2>
+
+            <div class="contact-grid">
+
+                <div class="contact-info">
+
+                    <span class="section-mini">
+                        CLUBE ATLÉTICO VALE DO CEDRO
+                    </span>
+
+                    <h3>Fale com o Leão do Vale</h3>
+
+                    <p>
+                        Entre em contato com os departamentos oficiais do clube.
+                        Nossa equipe está preparada para atender torcedores,
+                        parceiros e profissionais da imprensa.
+                    </p>
+
+
+                    <div class="contact-item">
+                        <strong>Sede Administrativa</strong>
+                        <span>Rua das Araucárias, 2018 - Vale do Cedro/SC</span>
+                    </div>
+
+
+                    <div class="contact-item">
+                        <strong>Telefone</strong>
+                        <span>(48) 3333-2018</span>
+                    </div>
+
+
+                    <div class="contact-item">
+                        <strong>E-mail</strong>
+                        <span>contato@cavc.com.br</span>
+                    </div>
+
+
+                </div>
+
+
+                <div class="contact-form">
+
+                    <h3>Envie uma mensagem</h3>
+
+                    <form onsubmit="return false;">
+
+                        <input type="text" placeholder="Nome">
+
+                        <input type="email" placeholder="E-mail">
+
+                        <select>
+                            <option>Assunto</option>
+                            <option>Imprensa</option>
+                            <option>Sócio Torcedor</option>
+                            <option>Marketing</option>
+                            <option>Outros</option>
+                        </select>
+
+                        <textarea placeholder="Mensagem"></textarea>
+
+                        <button class="btn btn-primary">
+                            Enviar mensagem
+                        </button>
+
+                        <small class="contact-note">
+                            Este é um projeto fictício desenvolvido para fins demonstrativos.
+                            O Clube Atlético Vale do Cedro e seus canais de contato são parte de uma
+                            experiência conceitual, portanto nenhuma mensagem será recebida ou respondida.
+                            Para entrar em contato com o desenvolvedor do projeto, acesse o
+                            <a href="https://www.linkedin.com/in/gabriel-andrade-a26025319/" target="_blank"
+                                rel="noopener">
+                                LinkedIn
+                            </a>
+                            ou envie um e-mail para
+                            <a href="mailto:gabrielg.andrade77@gmail.com">
+                                gabrielg.andrade77@gmail.com
+                            </a>.
+                        </small>
+                    </form>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
     <!-- ================= FOOTER ================= -->
     <footer>
         <div class="container">
@@ -282,17 +596,21 @@
 
                 <div>
                     <h4>CAVC</h4>
-                    <p>Clube Atlético Vale do Cedro</p>
+                    <a href="#inicio">
+                        <p>Clube Atlético Vale do Cedro</p>
+                    </a>
                 </div>
 
                 <div>
                     <h4>Clube</h4>
-                    <p>História<br>Estrutura<br>Elenco</p>
+                    <p><a href="#clube">História</a><br><a href="#estrutura">Estrutura</a><br><a
+                            href="#futebol">Elenco</a></p>
                 </div>
 
                 <div>
                     <h4>Contato</h4>
-                    <p>Imprensa<br>Sócios<br>Marketing</p>
+                    <p><a href="#contato">Imprensa<br><a href="#contato">Sócios<br></a><a href="#contato">Marketing</a>
+                    </p>
                 </div>
 
             </div>
