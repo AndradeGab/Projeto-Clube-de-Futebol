@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initGallery();
     initHistory();
     initAnthem();
+    initMembership();
 
 });
 
@@ -322,12 +323,12 @@ function initGallery() {
 
 }
 
-function initHistory(){
+function initHistory() {
 
     const button = document.getElementById("historyButton");
     const content = document.getElementById("historyContent");
 
-    if(!button || !content) return;
+    if (!button || !content) return;
 
 
     button.addEventListener("click", e => {
@@ -337,7 +338,7 @@ function initHistory(){
         content.classList.toggle("active");
 
 
-        if(content.classList.contains("active")){
+        if (content.classList.contains("active")) {
 
             button.textContent = "Fechar história";
 
@@ -351,7 +352,7 @@ function initHistory(){
 
 }
 
-function initAnthem(){
+function initAnthem() {
 
     const button = document.getElementById("anthemButton");
     const player = document.getElementById("anthemPlayer");
@@ -360,19 +361,19 @@ function initAnthem(){
     const volume = document.getElementById("volume");
 
 
-    if(!button || !audio) return;
+    if (!button || !audio) return;
 
 
-    button.addEventListener("click",()=>{
+    button.addEventListener("click", () => {
 
         player.classList.toggle("active");
 
     });
 
 
-    playPause.addEventListener("click",()=>{
+    playPause.addEventListener("click", () => {
 
-        if(audio.paused){
+        if (audio.paused) {
 
             audio.play();
             playPause.innerHTML = '<i class="bi bi-pause-fill"></i>';
@@ -387,10 +388,414 @@ function initAnthem(){
     });
 
 
-    volume.addEventListener("input",()=>{
+    volume.addEventListener("input", () => {
 
         audio.volume = volume.value;
 
     });
+
+}
+
+/* ==========================================================
+   ASSINATURA SÓCIO TORCEDOR - LEÃO CAVC
+========================================================== */
+
+function initMembership() {
+
+
+    const buttons = document.querySelectorAll(".fake-plan");
+
+    const animation = document.getElementById("membershipAnimation");
+
+    const loader = document.querySelector(".membership-loader");
+
+    const progress = document.getElementById("membershipProgress");
+
+    const flash = document.getElementById("lionFlash");
+
+    const lion = document.getElementById("membershipLion");
+
+    const welcome = document.getElementById("welcomeText");
+
+    const card = document.getElementById("memberCard");
+
+    const cardPlan = document.getElementById("cardPlan");
+
+    const success = document.getElementById("membershipSuccess");
+
+    const close = document.getElementById("closeMembership");
+
+
+
+    if (!buttons.length || !animation) return;
+
+
+
+    let selectedPlan = "";
+
+
+
+    /*
+        sons
+    */
+
+    const roar = new Audio("audio/leão.mp3");
+
+    roar.volume = .65;
+
+
+
+
+    buttons.forEach(button => {
+
+
+        button.addEventListener("click", () => {
+
+
+            selectedPlan = button.dataset.plan;
+
+
+            startMembership();
+
+
+        });
+
+
+    });
+
+
+
+
+    function startMembership() {
+
+
+
+        resetAnimation();
+
+
+
+        animation.style.setProperty(
+            "--plan-color",
+            getPlanColor(selectedPlan)
+        );
+
+
+
+        animation.classList.add("active");
+
+
+
+        let value = 0;
+
+
+
+        const interval = setInterval(() => {
+
+
+            value++;
+
+
+            progress.style.width = value + "%";
+
+
+
+            if (value >= 100) {
+
+
+                clearInterval(interval);
+
+
+                finishLoading();
+
+
+            }
+
+
+        }, 35);
+
+
+
+    }
+
+
+
+
+    function finishLoading() {
+
+
+        loader.style.opacity = "0";
+
+
+
+        setTimeout(() => {
+
+
+            loader.style.display = "none";
+
+
+            // rugido
+
+            roar.currentTime = 0;
+            roar.play().catch(() => { });
+
+            animation.classList.add("impact");
+
+            setTimeout(() => {
+
+                animation.classList.remove("impact");
+
+            }, 300);
+
+            // brilho
+
+            flash.classList.add("active");
+
+
+
+            // aparece o leão
+
+            setTimeout(() => {
+
+
+                applyPlanClass();
+
+                lion.classList.add("show");
+                console.log("leão apareceu", lion);
+
+
+            }, 500);
+
+
+
+
+            // começa o recuo
+
+            setTimeout(() => {
+
+
+                lion.style.transform =
+                    "scale(.45) translateY(-120px)";
+
+
+
+            }, 3500);
+
+
+
+
+            // texto
+
+            setTimeout(() => {
+
+
+                showWelcome();
+
+
+            }, 4500);
+
+
+
+        }, 700);
+
+
+    }
+
+
+
+
+    function showWelcome() {
+
+
+
+        welcome.innerHTML =
+            "BEM-VINDO À FAMÍLIA<br>" +
+            selectedPlan.toUpperCase();
+
+
+
+        welcome.classList.add("show");
+
+
+
+        setTimeout(() => {
+
+            showCard();
+
+        }, 2200);
+
+
+
+    }
+
+
+
+
+    function showCard() {
+
+
+
+        cardPlan.innerHTML =
+            selectedPlan.toUpperCase();
+
+
+
+        card.classList.add("show");
+
+
+
+        setTimeout(() => {
+
+
+            finishScreen();
+
+
+
+        }, 2500);
+
+
+
+    }
+
+
+
+
+    function finishScreen() {
+
+
+        card.classList.remove("show");
+
+        welcome.classList.remove("show");
+
+        lion.classList.remove("show");
+
+
+        setTimeout(() => {
+
+            success.style.display = "block";
+
+        }, 800);
+
+
+    }
+
+
+
+
+
+    close.addEventListener("click", () => {
+
+        animation.classList.remove("active");
+
+        resetAnimation();
+
+    });
+
+
+
+
+
+
+    function resetAnimation() {
+
+
+        progress.style.width = "0%";
+
+
+        loader.style.display = "block";
+
+        loader.style.opacity = "1";
+
+
+        flash.classList.remove("active");
+
+
+        lion.className = "";
+
+        lion.style.transform = "";
+
+
+        welcome.className = "";
+
+        welcome.innerHTML = "";
+
+
+        card.className = "";
+
+        card.style.opacity = "1";
+
+
+        success.style.display = "none";
+
+
+    }
+
+
+
+
+    function applyPlanClass() {
+
+        lion.classList.remove(
+            "bronze",
+            "prata",
+            "ouro"
+        );
+
+
+        if (selectedPlan.includes("Bronze")) {
+
+            lion.classList.add("bronze");
+
+        }
+
+
+        if (selectedPlan.includes("Prata")) {
+
+            lion.classList.add("prata");
+
+        }
+
+
+        if (selectedPlan.includes("Ouro")) {
+
+            lion.classList.add("ouro");
+
+        }
+
+    }
+
+
+
+
+
+    function getPlanColor(plan) {
+
+
+        if (plan.includes("Bronze")) {
+
+            return "#2E8B57";
+
+        }
+
+
+        if (plan.includes("Prata")) {
+
+            return "#FFFFFF";
+
+        }
+
+
+        if (plan.includes("Ouro")) {
+
+            return "#C9A227";
+
+        }
+
+
+        return "#C9A227";
+
+
+    }
+
+
 
 }

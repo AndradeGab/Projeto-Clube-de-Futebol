@@ -47,7 +47,7 @@
                     <li><a href="#contato">Contato</a></li>
                 </ul>
 
-                <a href="#contato" class="btn btn-primary">SEJA SÓCIO</a>
+                <a href="#socio" class="btn btn-primary">SEJA SÓCIO</a>
 
             </nav>
         </div>
@@ -290,7 +290,10 @@
                             </h4>
 
                             <p>
-                                A canção que representa a paixão e a coragem da torcida do CAVC. Esse hino ecoou pelo estádio quando o próprio cantor Pedro Vitor decidiu tomar o microfone do narrador e puxou a torcida pra cantar o hino do leão quando estavamos 1x1. Conseguimos virar o jogo e vencer grandiosamente.
+                                A canção que representa a paixão e a coragem da torcida do CAVC. Esse hino ecoou pelo
+                                estádio quando o próprio cantor Pedro Vitor decidiu tomar o microfone do narrador e
+                                puxou a torcida pra cantar o hino do leão quando estavamos 1x1. Conseguimos virar o jogo
+                                e vencer grandiosamente.
                             </p>
 
                         </div>
@@ -494,6 +497,81 @@
 
     </div>
 
+    <div class="membership-grid">
+
+        <!-- ================= BRONZE ================= -->
+        <article class="plan-card bronze">
+
+            <div class="member-image">
+                <img src="imgs/bronze.png" alt="Plano Leão Bronze">
+            </div>
+
+            <div class="plan-info">
+
+                <h3>Leão Bronze</h3>
+
+                <p>
+                    Para quem deseja apoiar o clube e começar a fazer parte da família CAVC.
+                </p>
+
+                <button class="btn btn-primary fake-plan" data-plan="Leão Bronze">
+                    Escolher Plano
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- ================= PRATA ================= -->
+        <article class="plan-card silver">
+
+            <div class="member-image">
+                <img src="imgs/prata.png" alt="Plano Leão Prata">
+            </div>
+
+            <div class="plan-info">
+
+                <h3>Leão Prata</h3>
+
+                <p>
+                    Mais benefícios, vantagens exclusivas e prioridade em experiências do clube.
+                </p>
+
+                <button class="btn btn-primary fake-plan" data-plan="Leão Prata">
+                    Escolher Plano
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- ================= OURO ================= -->
+        <article class="plan-card gold">
+
+            <div class="member-image">
+                <img src="imgs/ouro.png" alt="Plano Leão Ouro">
+            </div>
+
+            <div class="plan-info">
+
+                <h3>Leão Ouro</h3>
+
+                <p>
+                    O plano mais completo para quem vive intensamente o Leão do Vale.
+                </p>
+
+                <button class="btn btn-primary fake-plan" data-plan="Leão Ouro">
+                    Escolher Plano
+                </button>
+
+            </div>
+
+        </article>
+
+    </div>
+
     <!-- ================= CONTATO ================= -->
     <section class="contact" id="contato">
 
@@ -631,6 +709,86 @@
         <img src="" alt="Imagem ampliada" id="lightboxImg">
     </div>
 
+    <!-- =========================
+     ASSINATURA SÓCIO
+========================= -->
+
+    <div id="membershipAnimation">
+
+        <div class="membership-loader">
+
+            <h2>Processando assinatura...</h2>
+
+            <div class="progress-container">
+                <div id="membershipProgress"></div>
+            </div>
+
+        </div>
+
+
+        <div id="lionFlash"></div>
+
+
+        <div id="membershipLion">
+
+            <div class="smoke"></div>
+
+            <img src="imgs/leão.png" alt="Leão CAVC">
+
+        </div>
+
+
+        <h1 id="welcomeText"></h1>
+
+
+        <div id="memberCard">
+
+            <div class="card-header">
+                CAVC
+            </div>
+
+            <div class="card-body">
+
+                <h3 id="cardPlan">
+                    LEÃO OURO
+                </h3>
+
+                <p>
+                    Sócio Torcedor
+                </p>
+
+                <strong>
+                    Sócio 000001
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div id="membershipSuccess">
+
+            <h2>
+                Assinatura concluída com sucesso.
+            </h2>
+
+            <div class="membership-actions">
+
+                <button id="closeMembership">
+                    Fechar
+                </button>
+
+            </div>
+
+
+            <small>
+                Simulação de compra para fins demonstrativos.
+            </small>
+
+        </div>
+
+
+    </div>
     <script src="script.js"></script>
 </body>
 
