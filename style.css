@@ -2020,6 +2020,152 @@ footer p {
 
 }
 
+/* =========================
+   PARTÍCULAS
+========================= */
+
+#membershipParticles{
+
+    position:absolute;
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:2;
+
+}
+
+#membershipParticles span{
+
+    position:absolute;
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--plan-color);
+
+    box-shadow:
+    0 0 8px var(--plan-color),
+    0 0 18px var(--plan-color);
+
+    opacity:0;
+
+    animation:particleFloat 4.5s linear infinite;
+
+}
+
+#membershipParticles span:nth-child(1){
+
+    left:42%;
+    bottom:18%;
+
+    animation-delay:0s;
+
+}
+
+#membershipParticles span:nth-child(2){
+
+    left:48%;
+    bottom:15%;
+
+    animation-delay:.6s;
+
+}
+
+#membershipParticles span:nth-child(3){
+
+    left:56%;
+    bottom:20%;
+
+    animation-delay:1.2s;
+
+}
+
+#membershipParticles span:nth-child(4){
+
+    left:37%;
+    bottom:28%;
+
+    animation-delay:1.8s;
+
+}
+
+#membershipParticles span:nth-child(5){
+
+    left:60%;
+    bottom:32%;
+
+    animation-delay:2.4s;
+
+}
+
+#membershipParticles span:nth-child(6){
+
+    left:45%;
+    bottom:35%;
+
+    animation-delay:3s;
+
+}
+
+#membershipParticles span:nth-child(7){
+
+    left:52%;
+    bottom:24%;
+
+    animation-delay:3.5s;
+
+}
+
+#membershipParticles span:nth-child(8){
+
+    left:40%;
+    bottom:38%;
+
+    animation-delay:4s;
+
+}
+
+@keyframes particleFloat{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translateY(25px)
+        scale(.4);
+
+    }
+
+    20%{
+
+        opacity:.9;
+
+    }
+
+    70%{
+
+        opacity:.6;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translateY(-90px)
+        scale(1.2);
+
+    }
+
+}
+
 
 
 
@@ -2088,48 +2234,63 @@ footer p {
 
     position: absolute;
 
-    top: 0;
-    left: -40%;
+    top: -40%;
+    left: -120%;
 
-    width: 40%;
-    height: 100%;
+    width: 28%;
+    height: 180%;
+
+    transform: rotate(22deg);
 
     background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(255,255,255,.75),
-            transparent
-        );
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, .12) 35%,
+            rgba(255, 255, 255, .95) 50%,
+            rgba(255, 255, 255, .12) 65%,
+            rgba(255, 255, 255, 0) 100%);
 
-    transform: skewX(-20deg);
+    filter: blur(6px);
 
-    animation: metalShine 4s infinite;
+    animation: lionShine 5.5s ease-in-out infinite;
 
     pointer-events: none;
 
 }
 
 
-@keyframes metalShine {
+@keyframes lionShine {
 
     0% {
 
-        left: -50%;
+        left: -140%;
+        opacity: 0;
 
     }
 
+    10% {
+
+        opacity: 1;
+
+    }
 
     35% {
 
-        left: 120%;
+        left: 140%;
+        opacity: 1;
 
     }
 
+    45% {
+
+        opacity: 0;
+
+    }
 
     100% {
 
-        left: 120%;
+        left: 140%;
+        opacity: 0;
 
     }
 
@@ -2138,8 +2299,7 @@ footer p {
 #membershipLion.ouro img {
 
     filter:
-        drop-shadow(0 0 60px #C9A227)
-        brightness(1.25);
+        drop-shadow(0 0 60px #C9A227) brightness(1.25);
 
     animation: goldGlow 2s infinite alternate;
 
@@ -2151,16 +2311,14 @@ footer p {
     from {
 
         filter:
-        drop-shadow(0 0 40px #C9A227)
-        brightness(1.1);
+            drop-shadow(0 0 40px #C9A227) brightness(1.1);
 
     }
 
     to {
 
         filter:
-        drop-shadow(0 0 80px #FFD700)
-        brightness(1.35);
+            drop-shadow(0 0 80px #FFD700) brightness(1.35);
 
     }
 
@@ -2178,16 +2336,14 @@ footer p {
     from {
 
         filter:
-        grayscale(.8)
-        drop-shadow(0 0 30px white);
+            grayscale(.8) drop-shadow(0 0 30px white);
 
     }
 
     to {
 
         filter:
-        grayscale(.3)
-        drop-shadow(0 0 70px #fff);
+            grayscale(.3) drop-shadow(0 0 70px #fff);
 
     }
 
@@ -2205,14 +2361,14 @@ footer p {
     from {
 
         filter:
-        drop-shadow(0 0 30px #2E8B57);
+            drop-shadow(0 0 30px #2E8B57);
 
     }
 
     to {
 
         filter:
-        drop-shadow(0 0 70px #45ff99);
+            drop-shadow(0 0 70px #45ff99);
 
     }
 

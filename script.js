@@ -795,7 +795,79 @@ function initMembership() {
 
 
     }
-
-
-
 }
+
+// ==========================================================
+// CONTADOR DAS ESTATÍSTICAS DO JOGADOR
+// ==========================================================
+
+
+const counters = document.querySelectorAll(".counter");
+
+
+const observerStats = new IntersectionObserver((entries) => {
+
+
+    entries.forEach(entry => {
+
+
+        if (entry.isIntersecting) {
+
+
+            const counter = entry.target;
+
+
+            counter.closest(".stat-card")
+                .classList.add("show");
+
+
+            const target = +counter.dataset.target;
+
+
+            let current = 0;
+
+
+            const speed = target / 60;
+
+
+            function updateCounter() {
+
+                current += speed;
+
+
+                if (current < target) {
+
+                    counter.innerText = Math.floor(current);
+
+                    requestAnimationFrame(updateCounter);
+
+                } else {
+
+                    counter.innerText = target;
+
+                }
+
+            }
+
+
+            updateCounter();
+
+
+            observerStats.unobserve(counter);
+
+        }
+
+    });
+
+
+}, {
+    threshold: .5
+});
+
+
+
+counters.forEach(counter => {
+
+    observerStats.observe(counter);
+
+});
