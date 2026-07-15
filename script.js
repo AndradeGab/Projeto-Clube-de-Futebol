@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initHistory();
     initAnthem();
     initMembership();
+    initInterviewModal();
 
 });
 
@@ -464,8 +465,6 @@ function initMembership() {
     });
 
 
-
-
     function startMembership() {
 
 
@@ -871,3 +870,37 @@ counters.forEach(counter => {
     observerStats.observe(counter);
 
 });
+
+function initInterviewModal() {
+
+        const modal = document.getElementById("videoModal");
+        const video = document.getElementById("interviewVideo");
+        const openBtn = document.getElementById("openInterviewBtn");
+        const thumb = document.getElementById("openInterview");
+        const close = document.querySelector(".close-video");
+
+        if (!modal || !video) return;
+
+        function openVideo() {
+            modal.classList.add("active");
+            video.currentTime = 0;
+            video.play();
+        }
+
+        function closeVideo() {
+            modal.classList.remove("active");
+            video.pause();
+            video.currentTime = 0;
+        }
+
+        openBtn?.addEventListener("click", openVideo);
+        thumb?.addEventListener("click", openVideo);
+        close?.addEventListener("click", closeVideo);
+
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                closeVideo();
+            }
+        });
+
+    }

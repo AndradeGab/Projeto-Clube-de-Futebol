@@ -108,58 +108,56 @@
                 <!-- CONTEÚDO -->
 
                 <article class="news-article">
+                    <section class="player-stats">
 
+                        <div class="section-header">
+
+                            <span class="section-mini">
+                                TEMPORADA 2026
+                            </span>
+
+                            <h2>
+                                Números do atleta
+                            </h2>
+
+                        </div>
+
+
+                        <div class="stats-grid">
+
+                            <div class="stat-card">
+                                <strong class="counter" data-target="34">0</strong>
+                                <span>Partidas</span>
+                            </div>
+
+
+                            <div class="stat-card">
+                                <strong class="counter" data-target="15">0</strong>
+                                <span>Jogos sem sofrer gols</span>
+                            </div>
+
+
+                            <div class="stat-card">
+                                <strong class="counter" data-target="104">0</strong>
+                                <span>Defesas realizadas</span>
+                            </div>
+
+
+                            <div class="stat-card">
+                                <strong class="counter" data-target="3">0</strong>
+                                <span>Pênaltis defendidos</span>
+                            </div>
+
+                        </div>
+
+
+                    </section>
                     <figure class="news-featured-image">
-                        <section class="player-stats">
-
-                            <div class="section-header">
-
-                                <span class="section-mini">
-                                    TEMPORADA 2026
-                                </span>
-
-                                <h2>
-                                    Números do atleta
-                                </h2>
-
-                            </div>
-
-
-                            <div class="stats-grid">
-
-                                <div class="stat-card">
-                                    <strong class="counter" data-target="34">0</strong>
-                                    <span>Partidas</span>
-                                </div>
-
-
-                                <div class="stat-card">
-                                    <strong class="counter" data-target="15">0</strong>
-                                    <span>Jogos sem sofrer gols</span>
-                                </div>
-
-
-                                <div class="stat-card">
-                                    <strong class="counter" data-target="104">0</strong>
-                                    <span>Defesas realizadas</span>
-                                </div>
-
-
-                                <div class="stat-card">
-                                    <strong class="counter" data-target="3">0</strong>
-                                    <span>Pênaltis defendidos</span>
-                                </div>
-
-                            </div>
-
-
-                        </section>
 
                         <div class="official-label">
 
                             <i class="bi bi-patch-check-fill"></i>
                             OFICIALIZADO
-
                         </div>
                         <img src="imgs/assinatura.png" alt="Kenji Nakamura assina contrato com o CAVC">
 
@@ -352,44 +350,105 @@
 
                 <div class="presentation-box">
 
+                    <div class="presentation-video" id="openInterview">
+
+                        <img src="imgs/kenji-coletiva.png" alt="Coletiva de imprensa">
+
+                        <div class="play-button">
+
+                            <i class="bi bi-play-fill"></i>
+
+                        </div>
+
+                    </div>
 
                     <span class="section-mini">
                         APRESENTAÇÃO OFICIAL
                     </span>
 
-
                     <h2>
-                        Primeiras palavras de Kenji Nakamura
+                        Primeiras palavras de <span>Kenji Nakamura</span>
                     </h2>
 
-
                     <p>
-                        Em sua chegada ao Vale do Cedro, o goleiro falou sobre
-                        o novo desafio no futebol brasileiro e revelou a expectativa
-                        para vestir a camisa do CAVC.
+
+                        Em sua primeira entrevista pelo Clube Atlético Vale do Cedro,
+                        o goleiro japonês falou sobre a chegada ao futebol brasileiro,
+                        a recepção do elenco e as expectativas para a temporada.
+
                     </p>
 
+                    <button id="openInterviewBtn">
 
-                    <button>
                         <i class="bi bi-play-fill"></i>
-                        Assistir entrevista
-                    </button>
 
+                        Assistir trecho da entrevista
+
+                    </button>
 
                 </div>
 
-
             </section>
     </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <div>
+                    <h4>CAVC</h4>
+                    <a href="#inicio">
+                        <p>Clube Atlético Vale do Cedro</p>
+                    </a>
+                </div>
+
+                <div>
+                    <h4>Clube</h4>
+                    <p><a href="#clube">História</a><br><a href="#estrutura">Estrutura</a><br><a
+                            href="#futebol">Elenco</a></p>
+                </div>
+
+                <div>
+                    <h4>Contato</h4>
+                    <p><a href="#contato">Imprensa<br><a href="#contato">Sócios<br></a><a href="#contato">Marketing</a>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="footer-copy">
+            © 2026 Clube Atlético Vale do Cedro — Todos os direitos reservados.
+            <a href="https://www.linkedin.com/in/gabriel-andrade-a26025319/" target="_blank" rel="noopener">
+                Gabriel Andrade (LinkedIn)
+            </a>
+        </p>
+    </footer>
+
+    <div class="video-modal" id="videoModal">
+
+        <div class="video-box">
+
+            <button class="close-video">
+
+                <i class="bi bi-x-lg"></i>
+
+            </button>
+
+            <video id="interviewVideo" controls>
+
+                <source src="video/kenji.mp4" type="video/mp4">
+
+            </video>
+
+        </div>
+
     </div>
-
-    </section>
-
-
-
-    <!-- Footer -->
-    <!-- Copiar exatamente igual -->
-
     <script src="script.js"></script>
 
 </body>
