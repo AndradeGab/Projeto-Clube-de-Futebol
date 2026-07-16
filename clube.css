@@ -1,0 +1,1626 @@
+/* ==========================================================
+   VARIÁVEIS DA PÁGINA
+========================================================== */
+
+:root {
+
+    --club-green: #0B4F2F;
+    --club-dark: #062C1B;
+    --club-deep: #041C12;
+
+    --club-gold: #C9A227;
+    --club-gold-light: #DDBB4A;
+
+    --club-white: #FFFFFF;
+    --club-light: #F6F7F5;
+    --club-gray: #666666;
+
+}
+
+
+/* ==========================================================
+   RESET ESPECÍFICO
+========================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    background: #FFFFFF;
+
+    color: #222;
+
+}
+
+
+/* ==========================================================
+   CONTAINER
+========================================================== */
+
+.container {
+
+    width: min(1200px, 90%);
+
+    margin: 0 auto;
+
+}
+
+
+/* ==========================================================
+   HEADER
+========================================================== */
+
+header {
+
+    position: relative;
+
+    z-index: 1000;
+
+}
+
+
+/* ==========================================================
+   LOGO
+========================================================== */
+
+.logo {
+
+    text-decoration: none;
+
+}
+
+
+/* ==========================================================
+   HERO DA PÁGINA
+========================================================== */
+
+.club-page-hero {
+
+    position: relative;
+
+    min-height: 620px;
+
+    display: flex;
+
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(4, 28, 18, .98),
+            rgba(6, 44, 27, .82) 45%,
+            rgba(6, 44, 27, .38)
+        ),
+
+        url("imgs/estadio1.png")
+        center / cover;
+
+    color: white;
+
+}
+
+
+/* brilho dourado na parte inferior */
+
+.club-page-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 5px;
+
+    background: var(--club-gold);
+
+}
+
+
+/* conteúdo do hero */
+
+.club-page-hero .container {
+
+    position: relative;
+
+    z-index: 3;
+
+    animation: clubHeroIn .9s ease;
+
+}
+
+
+@keyframes clubHeroIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(35px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* pequeno título */
+
+.club-page-hero .section-mini {
+
+    color: var(--club-gold);
+
+    font-size: .8rem;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+}
+
+
+/* título principal */
+
+.club-page-hero h1 {
+
+    max-width: 850px;
+
+    margin: 18px 0 25px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: clamp(4rem, 8vw, 7rem);
+
+    line-height: .88;
+
+    letter-spacing: 2px;
+
+    color: white;
+
+}
+
+
+.club-page-hero h1 span {
+
+    color: var(--club-gold);
+
+}
+
+
+/* texto do hero */
+
+.club-page-hero p {
+
+    max-width: 600px;
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+
+    color: rgba(255, 255, 255, .82);
+
+}
+
+
+/* ==========================================================
+   ESCUDO GIGANTE NO HERO
+========================================================== */
+
+.club-page-shield {
+
+    position: absolute;
+
+    right: -80px;
+
+    top: 50%;
+
+    width: 560px;
+
+    transform: translateY(-50%);
+
+    opacity: .08;
+
+    filter:
+
+        drop-shadow(
+            0 0 60px
+            rgba(201, 162, 39, .7)
+        );
+
+    pointer-events: none;
+
+    animation: shieldFloat 6s ease-in-out infinite;
+
+}
+
+
+@keyframes shieldFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(-50%)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-53%)
+            rotate(2deg);
+
+    }
+
+}
+
+
+/* ==========================================================
+   SEÇÃO HISTÓRIA
+========================================================== */
+
+.club-page-history {
+
+    padding: 110px 0;
+
+    background: white;
+
+}
+
+
+/* grid principal */
+
+.club-page-history .club-grid {
+
+    display: grid;
+
+    grid-template-columns: 1.05fr 1fr;
+
+    gap: 80px;
+
+    align-items: center;
+
+}
+
+
+/* ==========================================================
+   TEXTO DA HISTÓRIA
+========================================================== */
+
+.club-text .section-mini {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--club-gold);
+
+    font-size: .75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+}
+
+
+.club-text h2 {
+
+    margin: 0 0 25px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 3.8rem;
+
+    line-height: .95;
+
+    color: var(--club-green);
+
+}
+
+
+.club-text p {
+
+    margin-bottom: 18px;
+
+    color: #555;
+
+    font-size: 1.05rem;
+
+    line-height: 1.85;
+
+}
+
+
+.club-text strong {
+
+    color: var(--club-green);
+
+}
+
+
+/* ==========================================================
+   BOTÃO HISTÓRIA
+========================================================== */
+
+.club-text .btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 12px;
+
+    padding: 14px 28px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: var(--club-green);
+
+    color: white;
+
+    font-family: "Inter", sans-serif;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+
+        transform .3s ease,
+
+        background .3s ease,
+
+        box-shadow .3s ease;
+
+}
+
+
+.club-text .btn:hover {
+
+    background: #197A43;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+
+        0 10px 25px
+        rgba(11, 79, 47, .25);
+
+}
+
+
+/* ==========================================================
+   HISTÓRIA COMPLETA
+========================================================== */
+
+.history-content {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    margin-top: 0;
+
+    transition:
+
+        max-height .6s ease,
+
+        opacity .4s ease,
+
+        margin-top .5s ease;
+
+}
+
+
+.history-content.active {
+
+    max-height: 1500px;
+
+    opacity: 1;
+
+    margin-top: 35px;
+
+}
+
+
+.history-content h3 {
+
+    margin: 0 0 20px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 2.2rem;
+
+    color: var(--club-green);
+
+}
+
+
+.history-content p {
+
+    margin-bottom: 18px;
+
+    font-size: .98rem;
+
+    line-height: 1.8;
+
+}
+
+
+.history-content ul {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin: 20px 0;
+
+    padding: 0;
+
+    list-style: none;
+
+}
+
+
+.history-content li {
+
+    position: relative;
+
+    padding-left: 25px;
+
+    color: #444;
+
+    font-weight: 600;
+
+}
+
+
+.history-content li::before {
+
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+
+    color: var(--club-gold);
+
+    font-weight: 900;
+
+}
+
+
+/* ==========================================================
+   IMAGEM DA ARENA
+========================================================== */
+
+.club-image {
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    background: var(--club-dark);
+
+    box-shadow:
+
+        0 25px 60px
+        rgba(0, 0, 0, .18);
+
+}
+
+
+.club-image img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 550px;
+
+    object-fit: cover;
+
+    cursor: pointer;
+
+    transition:
+
+        transform .6s ease,
+
+        filter .6s ease;
+
+}
+
+
+.club-image:hover img {
+
+    transform: scale(1.06);
+
+    filter: brightness(1.08);
+
+}
+
+
+/* legenda sobre a imagem */
+
+.club-image-caption {
+
+    position: absolute;
+
+    left: 0;
+
+    right: 0;
+
+    bottom: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+    padding: 30px 25px 22px;
+
+    background:
+
+        linear-gradient(
+            transparent,
+            rgba(0, 0, 0, .85)
+        );
+
+    color: white;
+
+}
+
+
+.club-image-caption strong {
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 1.8rem;
+
+    letter-spacing: 1px;
+
+}
+
+
+.club-image-caption span {
+
+    color: rgba(255, 255, 255, .75);
+
+    font-size: .9rem;
+
+}
+
+
+/* ==========================================================
+   LIGHTBOX
+========================================================== */
+
+.lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 40px;
+
+    background: rgba(0, 0, 0, 0);
+
+    opacity: 0;
+
+    transition:
+
+        opacity .3s ease,
+
+        background .3s ease;
+
+}
+
+
+.lightbox.active {
+
+    display: flex;
+
+    opacity: 1;
+
+    background: rgba(0, 0, 0, .92);
+
+}
+
+
+.lightbox img {
+
+    max-width: 90%;
+
+    max-height: 88vh;
+
+    border-radius: 15px;
+
+    transform: scale(.9);
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(0, 0, 0, .6);
+
+    transition:
+
+        transform .35s ease;
+
+}
+
+
+.lightbox.active img {
+
+    transform: scale(1);
+
+}
+
+
+/* botão fechar */
+
+.lightbox-close {
+
+    position: absolute;
+
+    top: 25px;
+
+    right: 30px;
+
+    width: 48px;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #111;
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+
+    transition:
+
+        transform .3s ease,
+
+        background .3s ease;
+
+}
+
+
+.lightbox-close:hover {
+
+    transform: rotate(90deg);
+
+    background: var(--club-gold);
+
+}
+
+
+/* ==========================================================
+   IDENTIDADE DO CLUBE
+========================================================== */
+
+.club-identity {
+
+    padding: 110px 0;
+
+    background: var(--club-light);
+
+}
+
+
+/* cabeçalho das seções */
+
+.section-header {
+
+    margin-bottom: 50px;
+
+    text-align: center;
+
+}
+
+
+.section-header .section-mini {
+
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: var(--club-gold);
+
+    font-size: .75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+}
+
+
+.section-header h2 {
+
+    margin: 0;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 3.8rem;
+
+    line-height: 1;
+
+    color: var(--club-green);
+
+}
+
+
+/* cards */
+
+.identity-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+}
+
+
+.identity-card {
+
+    padding: 40px 30px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+
+        0 12px 35px
+        rgba(0, 0, 0, .06);
+
+    transition:
+
+        transform .3s ease,
+
+        box-shadow .3s ease;
+
+}
+
+
+.identity-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+
+        0 20px 45px
+        rgba(0, 0, 0, .12);
+
+}
+
+
+/* ícone */
+
+.identity-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto 20px;
+
+    border-radius: 50%;
+
+    background: var(--club-green);
+
+    color: var(--club-gold);
+
+    font-size: 1.8rem;
+
+}
+
+
+.identity-card h3 {
+
+    margin: 0 0 12px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 2rem;
+
+    color: var(--club-green);
+
+}
+
+
+.identity-card p {
+
+    margin: 0;
+
+    color: #666;
+
+    line-height: 1.7;
+
+}
+
+
+/* ==========================================================
+   HINO OFICIAL
+========================================================== */
+
+.club-anthem {
+
+    padding: 110px 0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--club-dark),
+            var(--club-deep)
+        );
+
+}
+
+
+.club-anthem .anthem-box {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 65px;
+
+    border: 1px solid
+        rgba(201, 162, 39, .25);
+
+    border-radius: 25px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(11, 79, 47, .65),
+            rgba(4, 28, 18, .75)
+        );
+
+    color: white;
+
+    text-align: center;
+
+    box-shadow:
+
+        0 25px 70px
+        rgba(0, 0, 0, .25);
+
+}
+
+
+.anthem-header > span {
+
+    color: var(--club-gold);
+
+    font-size: .75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+}
+
+
+.anthem-header h2 {
+
+    margin: 12px 0 20px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 3.8rem;
+
+    color: white;
+
+}
+
+
+.anthem-header p {
+
+    max-width: 700px;
+
+    margin: 0 auto 15px;
+
+    color: rgba(255, 255, 255, .75);
+
+    line-height: 1.8;
+
+}
+
+
+/* botão do hino */
+
+.anthem-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+    padding: 15px 30px;
+
+    border: none;
+
+    border-radius: 999px;
+
+    background: var(--club-gold);
+
+    color: #111;
+
+    font-family: "Inter", sans-serif;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+
+        transform .3s ease,
+
+        background .3s ease;
+
+}
+
+
+.anthem-button i {
+
+    font-size: 1.35rem;
+
+}
+
+
+.anthem-button:hover {
+
+    background: var(--club-gold-light);
+
+    transform: translateY(-3px);
+
+}
+
+
+/* ==========================================================
+   PLAYER DO HINO
+========================================================== */
+
+.anthem-player {
+
+    display: none;
+
+    align-items: center;
+
+    gap: 22px;
+
+    margin-top: 30px;
+
+    padding: 20px 25px;
+
+    border: 1px solid
+        rgba(255, 255, 255, .1);
+
+    border-radius: 18px;
+
+    background: rgba(0, 0, 0, .25);
+
+    text-align: left;
+
+}
+
+
+.anthem-player.active {
+
+    display: flex;
+
+    animation: anthemShow .4s ease;
+
+}
+
+
+@keyframes anthemShow {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* ícone do player */
+
+.anthem-icon {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    background: var(--club-gold);
+
+    color: var(--club-dark);
+
+    font-size: 1.5rem;
+
+}
+
+
+/* informações */
+
+.anthem-info {
+
+    display: flex;
+
+    flex: 1;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+
+.anthem-info strong {
+
+    color: white;
+
+}
+
+
+.anthem-info span {
+
+    color: rgba(255, 255, 255, .6);
+
+    font-size: .9rem;
+
+}
+
+
+/* controles */
+
+.anthem-controls {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+}
+
+
+.anthem-controls button {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: var(--club-gold);
+
+    color: #111;
+
+    cursor: pointer;
+
+    transition:
+
+        transform .25s ease;
+
+}
+
+
+.anthem-controls button:hover {
+
+    transform: scale(1.1);
+
+}
+
+
+.volume-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: white;
+
+}
+
+
+.volume-box input {
+
+    width: 100px;
+
+    accent-color: var(--club-gold);
+
+}
+
+
+/* ==========================================================
+   UNIFORMES
+========================================================== */
+
+.club-kits {
+
+    padding: 110px 0;
+
+    background: white;
+
+}
+
+
+.kits-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 30px;
+
+}
+
+
+.kit-card {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    overflow: hidden;
+
+    min-height: 430px;
+
+    border-radius: 22px;
+
+    background: var(--club-light);
+
+    box-shadow:
+
+        0 15px 40px
+        rgba(0, 0, 0, .08);
+
+}
+
+
+.kit-card img {
+
+    width: 110%;
+
+    height: 100%;
+
+    min-height: 430px;
+
+    object-fit: cover;
+
+}
+
+
+.kit-card > div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 35px;
+
+}
+
+
+.kit-card > div > span {
+
+    margin-bottom: 10px;
+
+    color: var(--club-gold);
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 2rem;
+
+}
+
+
+.kit-card h3 {
+
+    margin: 0 0 15px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 2.2rem;
+
+    color: var(--club-green);
+
+}
+
+
+.kit-card p {
+
+    margin: 0;
+
+    color: #666;
+
+    line-height: 1.7;
+
+}
+
+
+/* ==========================================================
+   FOOTER
+========================================================== */
+
+footer {
+
+    padding: 35px 0;
+
+    background: var(--club-deep);
+
+    color: rgba(255, 255, 255, .7);
+
+    text-align: center;
+
+}
+
+
+footer p {
+
+    margin: 0;
+
+    font-size: .9rem;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVIDADE
+========================================================== */
+
+@media (max-width: 1000px) {
+
+
+    .club-page-history .club-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+    }
+
+
+    .club-page-shield {
+
+        right: -180px;
+
+        opacity: .05;
+
+    }
+
+
+    .identity-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .kits-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 900px) {
+
+
+    .club-page-hero {
+
+        min-height: 550px;
+
+    }
+
+
+    .club-page-hero h1 {
+
+        font-size: 5rem;
+
+    }
+
+
+    .club-page-history,
+
+    .club-identity,
+
+    .club-anthem,
+
+    .club-kits {
+
+        padding: 80px 0;
+
+    }
+
+
+    .section-header h2 {
+
+        font-size: 3rem;
+
+    }
+
+
+    .club-text h2 {
+
+        font-size: 3.2rem;
+
+    }
+
+
+    .club-anthem .anthem-box {
+
+        padding: 45px 25px;
+
+    }
+
+
+    .anthem-header h2 {
+
+        font-size: 3rem;
+
+    }
+
+
+    .anthem-player {
+
+        flex-wrap: wrap;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+
+    .container {
+
+        width: 88%;
+
+    }
+
+
+    .club-page-hero {
+
+        min-height: 500px;
+
+    }
+
+
+    .club-page-hero h1 {
+
+        font-size: 4rem;
+
+    }
+
+
+    .club-page-hero p {
+
+        font-size: 1rem;
+
+    }
+
+
+    .club-page-shield {
+
+        right: -240px;
+
+        width: 500px;
+
+    }
+
+
+    .club-image img {
+
+        height: 380px;
+
+    }
+
+
+    .club-text h2 {
+
+        font-size: 2.8rem;
+
+    }
+
+
+    .section-header h2 {
+
+        font-size: 2.8rem;
+
+    }
+
+
+    .identity-card {
+
+        padding: 35px 25px;
+
+    }
+
+
+    .kit-card {
+
+        display: block;
+
+    }
+
+
+    .kit-card img {
+
+        height: 350px;
+
+        min-height: 0;
+
+    }
+
+
+    .kit-card > div {
+
+        padding: 30px;
+
+    }
+
+
+    .anthem-header h2 {
+
+        font-size: 2.7rem;
+
+    }
+
+
+    .anthem-player {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .anthem-info {
+
+        align-items: center;
+
+    }
+
+
+    .anthem-controls {
+
+        flex-direction: column;
+
+    }
+
+
+    .volume-box {
+
+        width: 100%;
+
+    }
+
+
+    .volume-box input {
+
+        width: 140px;
+
+    }
+
+
+    .lightbox {
+
+        padding: 20px;
+
+    }
+
+
+    .lightbox img {
+
+        max-width: 100%;
+
+    }
+
+}
