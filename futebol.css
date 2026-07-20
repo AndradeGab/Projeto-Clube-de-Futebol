@@ -1,167 +1,63 @@
 /* ==========================================================
-   RESET ESPECÍFICO
-========================================================== */
-
-* {
-    box-sizing: border-box;
-}
-
-
-/* ==========================================================
-   VARIÁVEIS
-========================================================== */
-
-:root {
-
-    --verde-cavc: #0B4F2F;
-    --verde-escuro: #062c1b;
-    --verde-claro: #197A43;
-
-    --dourado: #C9A227;
-    --dourado-claro: #D4AF37;
-
-    --branco: #FFFFFF;
-    --cinza-claro: #f5f5f3;
-    --cinza: #666;
-    --preto: #111;
-
-}
-
-
-/* ==========================================================
-   HERO DO FUTEBOL
+   HERO
 ========================================================== */
 
 .football-hero {
 
     min-height: 560px;
 
-    position: relative;
-
     display: flex;
 
     align-items: center;
 
-    overflow: hidden;
+    position: relative;
 
     background:
 
         linear-gradient(
             90deg,
-            rgba(5, 20, 12, .96),
-            rgba(5, 20, 12, .78),
-            rgba(5, 20, 12, .35)
+            rgba(4, 24, 14, .97),
+            rgba(4, 24, 14, .78),
+            rgba(4, 24, 14, .25)
         ),
 
-        url("imgs/ct-vale-do-cedro.jpg")
-        center / cover;
+        url("imgs/estadio2.png") center/cover;
 
     color: white;
 
 }
 
+.football-hero-overlay {
 
-.football-hero-content {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(11, 79, 47, .35),
+            transparent
+        );
+
+}
+
+.football-hero .container {
 
     position: relative;
 
     z-index: 2;
 
-    max-width: 700px;
-
 }
 
-
-.football-hero-label {
+.football-kicker {
 
     display: inline-block;
 
     margin-bottom: 20px;
 
-    color: var(--dourado);
-
-    font-size: .8rem;
-
-    font-weight: 800;
-
-    letter-spacing: 3px;
-
-}
-
-
-.football-hero h1 {
-
-    margin: 0 0 20px;
-
-    font-family: "Bebas Neue", sans-serif;
-
-    font-size: clamp(4rem, 7vw, 7rem);
-
-    line-height: .9;
-
-    letter-spacing: 1px;
-
-}
-
-
-.football-hero p {
-
-    max-width: 600px;
-
-    color: rgba(255, 255, 255, .8);
-
-    font-size: 1.1rem;
-
-    line-height: 1.8;
-
-}
-
-
-/* ==========================================================
-   CONTEÚDO PRINCIPAL
-========================================================== */
-
-.football-content {
-
-    padding: 100px 0;
-
-    background: #fff;
-
-}
-
-
-.football-section {
-
-    margin-bottom: 110px;
-
-}
-
-
-.football-section:last-child {
-
-    margin-bottom: 0;
-
-}
-
-
-/* ==========================================================
-   CABEÇALHOS DAS SEÇÕES
-========================================================== */
-
-.football-section-header {
-
-    margin-bottom: 45px;
-
-}
-
-
-.section-mini {
-
-    display: block;
-
-    margin-bottom: 10px;
-
-    color: var(--dourado);
+    color: #C9A227;
 
     font-size: .75rem;
 
@@ -171,25 +67,72 @@
 
 }
 
-
-.football-section-header h2 {
-
-    margin: 0;
-
-    color: var(--verde-cavc);
+.football-hero h1 {
 
     font-family: "Bebas Neue", sans-serif;
 
-    font-size: 3.5rem;
+    font-size: clamp(4rem, 8vw, 8rem);
 
-    letter-spacing: 1px;
+    line-height: .86;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 28px;
+
+}
+
+.football-hero p {
+
+    max-width: 550px;
+
+    color: rgba(255, 255, 255, .75);
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
 
 }
 
 
-.football-section-header p {
+/* ==========================================================
+   INTRODUÇÃO DAS SEÇÕES
+========================================================== */
 
-    max-width: 650px;
+.section-intro {
+
+    margin-bottom: 45px;
+
+}
+
+.section-intro span {
+
+    color: #C9A227;
+
+    font-size: .72rem;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+
+}
+
+.section-intro h2 {
+
+    margin-top: 8px;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 4rem;
+
+    line-height: .95;
+
+    color: #0B4F2F;
+
+}
+
+.section-intro p {
+
+    max-width: 600px;
 
     margin-top: 15px;
 
@@ -199,410 +142,229 @@
 
 }
 
+.section-intro.centered {
+
+    text-align: center;
+
+}
+
+.section-intro.centered p {
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+}
+
 
 /* ==========================================================
-   DIRETORIA
+   PRESIDENTE
 ========================================================== */
 
-.board-grid {
+.president-section {
+
+    padding: 110px 0;
+
+    background: #f7f7f4;
+
+}
+
+.president-feature {
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 400px 1fr;
 
-    gap: 24px;
-
-}
-
-
-.board-card {
-
-    position: relative;
-
-    display: flex;
+    gap: 70px;
 
     align-items: center;
 
-    gap: 22px;
+    max-width: 1050px;
 
-    min-height: 150px;
+    margin: auto;
 
-    padding: 25px;
+}
+
+.president-image {
+
+    position: relative;
+
+    height: 500px;
 
     overflow: hidden;
 
-    border-radius: 18px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            var(--verde-cavc),
-            var(--verde-escuro)
-        );
-
-    color: white;
+    border-radius: 20px;
 
     box-shadow:
 
-        0 15px 35px rgba(0, 0, 0, .12);
-
-    transition: .3s ease;
+        0 25px 55px rgba(0, 0, 0, .18);
 
 }
 
+.president-image img {
 
-.board-card:hover {
+    width: 100%;
 
-    transform: translateY(-6px);
+    height: 100%;
 
-    box-shadow:
-
-        0 20px 45px rgba(11, 79, 47, .25);
+    object-fit: cover;
 
 }
 
-
-.board-card::after {
-
-    content: "";
+.president-image-label {
 
     position: absolute;
 
-    right: -30px;
+    bottom: 20px;
 
-    bottom: -45px;
+    left: 20px;
 
-    width: 150px;
+    padding: 9px 15px;
 
-    height: 150px;
+    background: #C9A227;
 
-    border: 1px solid rgba(201, 162, 39, .25);
+    color: #111;
 
-    border-radius: 50%;
+    border-radius: 4px;
 
-}
+    font-size: .7rem;
 
-
-.board-card-image {
-
-    width: 85px;
-
-    height: 85px;
-
-    flex-shrink: 0;
-
-    overflow: hidden;
-
-    border-radius: 50%;
-
-    border: 3px solid var(--dourado);
-
-}
-
-
-.board-card-image img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-}
-
-
-.board-card-info {
-
-    position: relative;
-
-    z-index: 1;
-
-}
-
-
-.board-card-info span {
-
-    display: block;
-
-    margin-bottom: 5px;
-
-    color: var(--dourado-claro);
-
-    font-size: .75rem;
-
-    font-weight: 700;
+    font-weight: 900;
 
     letter-spacing: 1px;
 
-    text-transform: uppercase;
-
 }
 
+.president-role {
 
-.board-card-info h3 {
-
-    margin: 0;
-
-    font-size: 1.15rem;
-
-}
-
-
-.board-card-info p {
-
-    margin-top: 5px;
-
-    color: rgba(255, 255, 255, .65);
-
-    font-size: .85rem;
-
-}
-
-
-/* ==========================================================
-   COMISSÃO TÉCNICA
-========================================================== */
-
-.staff-grid {
-
-    display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 20px;
-
-}
-
-
-.staff-card {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 25px;
-
-    padding: 20px;
-
-    border: 1px solid #e8e8e8;
-
-    border-radius: 18px;
-
-    background: #fff;
-
-    box-shadow:
-
-        0 10px 25px rgba(0, 0, 0, .06);
-
-    transition: .3s ease;
-
-}
-
-
-.staff-card:hover {
-
-    transform: translateY(-4px);
-
-    border-color: rgba(201, 162, 39, .5);
-
-    box-shadow:
-
-        0 15px 35px rgba(0, 0, 0, .1);
-
-}
-
-
-.staff-card-image {
-
-    width: 115px;
-
-    height: 115px;
-
-    flex-shrink: 0;
-
-    overflow: hidden;
-
-    border-radius: 14px;
-
-}
-
-
-.staff-card-image img {
-
-    width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-}
-
-
-.staff-card-info span {
-
-    color: var(--dourado);
+    color: #C9A227;
 
     font-size: .75rem;
 
     font-weight: 800;
 
-    letter-spacing: 1px;
-
-    text-transform: uppercase;
+    letter-spacing: 3px;
 
 }
 
+.president-content h2 {
 
-.staff-card-info h3 {
-
-    margin: 8px 0;
-
-    color: var(--verde-cavc);
-
-    font-size: 1.3rem;
-
-}
-
-
-.staff-card-info p {
-
-    margin: 0;
-
-    color: #777;
-
-    font-size: .9rem;
-
-}
-
-
-/* ==========================================================
-   ELENCO PROFISSIONAL
-========================================================== */
-
-.squad-section {
-
-    padding: 70px 50px;
-
-    border-radius: 30px;
-
-    background:
-
-        linear-gradient(
-            135deg,
-            #f4f6f3,
-            #ffffff
-        );
-
-}
-
-
-.squad-header {
-
-    display: flex;
-
-    align-items: end;
-
-    justify-content: space-between;
-
-    margin-bottom: 45px;
-
-}
-
-
-.squad-header h2 {
-
-    margin: 0;
-
-    color: var(--verde-cavc);
+    margin: 8px 0 20px;
 
     font-family: "Bebas Neue", sans-serif;
 
-    font-size: 3.5rem;
+    font-size: 4.5rem;
+
+    line-height: .9;
+
+    color: #0B4F2F;
 
 }
 
+.president-content p {
 
-.squad-header p {
+    max-width: 600px;
 
-    max-width: 400px;
+    color: #555;
 
-    margin: 0;
+    line-height: 1.8;
 
-    color: #666;
+    margin-bottom: 18px;
 
-    line-height: 1.6;
+}
+
+.president-highlight {
+
+    padding-left: 20px;
+
+    border-left: 4px solid #C9A227;
+
+    font-size: 1.2rem;
+
+    font-weight: 600;
+
+    color: #0B4F2F !important;
+
+}
+
+.president-facts {
+
+    display: flex;
+
+    gap: 45px;
+
+    margin-top: 30px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #ddd;
+
+}
+
+.president-facts div {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.president-facts strong {
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 2rem;
+
+    color: #0B4F2F;
+
+}
+
+.president-facts span {
+
+    color: #777;
+
+    font-size: .8rem;
 
 }
 
 
 /* ==========================================================
-   GRID DOS JOGADORES
+   EQUIPE DE FUTEBOL
 ========================================================== */
 
-.players-grid {
+.football-team-section {
 
-    display: grid;
+    padding: 110px 0;
 
-    grid-template-columns: repeat(4, 1fr);
-
-    gap: 22px;
+    background: white;
 
 }
 
-
-.player-card {
+.staff-banner {
 
     position: relative;
 
-    min-height: 390px;
+    min-height: 400px;
 
     overflow: hidden;
 
-    border-radius: 18px;
-
-    background:
-
-        linear-gradient(
-            160deg,
-            #0B4F2F,
-            #062c1b
-        );
-
-    color: white;
-
-    box-shadow:
-
-        0 15px 30px rgba(0, 0, 0, .12);
-
-    transition: .35s ease;
+    border-radius: 22px;
 
 }
 
+.staff-banner img {
 
-.player-card:hover {
+    width: 100%;
 
-    transform: translateY(-8px);
+    height: 100%;
 
-    box-shadow:
+    min-height: 400px;
 
-        0 25px 45px rgba(0, 0, 0, .2);
-
-}
-
-
-.player-card-image {
-
-    position: relative;
-
-    height: 280px;
-
-    overflow: hidden;
+    object-fit: cover;
 
 }
 
-
-.player-card-image::after {
+.staff-banner::after {
 
     content: "";
 
@@ -613,15 +375,145 @@
     background:
 
         linear-gradient(
-            to top,
-            rgba(6, 44, 27, .8),
-            transparent 60%
+            90deg,
+            rgba(5, 25, 15, .95),
+            rgba(5, 25, 15, .55),
+            transparent
         );
 
 }
 
+.staff-banner-content {
 
-.player-card-image img {
+    position: absolute;
+
+    left: 55px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 2;
+
+    max-width: 470px;
+
+    color: white;
+
+}
+
+.staff-banner-content span {
+
+    color: #C9A227;
+
+    font-size: .7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+}
+
+.staff-banner-content h3 {
+
+    margin: 12px 0;
+
+    font-family: "Bebas Neue", sans-serif;
+
+    font-size: 3.5rem;
+
+    line-height: .95;
+
+}
+
+.staff-banner-content p {
+
+    color: rgba(255, 255, 255, .75);
+
+    line-height: 1.7;
+
+}
+
+
+/* ==========================================================
+   ELENCO
+========================================================== */
+
+.squad-section {
+
+    padding: 110px 0;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #062c1b,
+            #0B4F2F
+        );
+
+}
+
+.squad-section .section-intro h2 {
+
+    color: white;
+
+}
+
+.squad-section .section-intro p {
+
+    color: rgba(255, 255, 255, .65);
+
+}
+
+.squad-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 22px;
+
+}
+
+
+/* ==========================================================
+   CARD DO JOGADOR
+========================================================== */
+
+.player-card {
+
+    overflow: hidden;
+
+    background: white;
+
+    border-radius: 15px;
+
+    transition: .35s ease;
+
+}
+
+.player-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+
+        0 20px 40px rgba(0, 0, 0, .25);
+
+}
+
+.player-photo {
+
+    position: relative;
+
+    height: 280px;
+
+    background: #ddd;
+
+    overflow: hidden;
+
+}
+
+.player-photo img {
 
     width: 100%;
 
@@ -631,276 +523,230 @@
 
     object-position: center top;
 
-    transition: .5s ease;
+    transition: .4s ease;
 
 }
 
+.player-card:hover .player-photo img {
 
-.player-card:hover img {
-
-    transform: scale(1.06);
+    transform: scale(1.05);
 
 }
-
 
 .player-number {
 
     position: absolute;
 
-    top: 15px;
+    top: 12px;
 
     right: 15px;
 
-    z-index: 2;
-
-    color: rgba(255, 255, 255, .25);
-
     font-family: "Bebas Neue", sans-serif;
 
-    font-size: 4rem;
+    font-size: 3rem;
 
     line-height: 1;
 
-}
+    color: white;
 
-
-.player-card-info {
-
-    padding: 18px 20px 22px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, .6);
 
 }
 
+.player-content {
 
-.player-card-info span {
+    padding: 20px;
+
+}
+
+.player-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+}
+
+.player-position {
 
     display: block;
 
     margin-bottom: 5px;
 
-    color: var(--dourado);
+    color: #C9A227;
 
-    font-size: .72rem;
+    font-size: .68rem;
 
-    font-weight: 800;
-
-    letter-spacing: 1.5px;
-
-    text-transform: uppercase;
-
-}
-
-
-.player-card-info h3 {
-
-    margin: 0;
-
-    font-size: 1.35rem;
-
-}
-
-
-.player-card-info p {
-
-    margin-top: 5px;
-
-    color: rgba(255, 255, 255, .65);
-
-    font-size: .85rem;
-
-}
-
-
-/* ==========================================================
-   DESTAQUE DO GOLEIRO / CAPITÃO
-========================================================== */
-
-.player-card.featured {
-
-    grid-column: span 2;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-}
-
-
-.player-card.featured .player-card-image {
-
-    height: 100%;
-
-}
-
-
-.player-card.featured .player-card-info {
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    padding: 35px;
-
-}
-
-
-.player-card.featured .player-card-info h3 {
-
-    font-size: 2rem;
-
-}
-
-
-/* ==========================================================
-   POSIÇÕES
-========================================================== */
-
-.position-title {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 15px;
-
-    margin: 50px 0 25px;
-
-}
-
-
-.position-title::after {
-
-    content: "";
-
-    height: 1px;
-
-    flex: 1;
-
-    background: #ddd;
-
-}
-
-
-.position-title h3 {
-
-    margin: 0;
-
-    color: var(--verde-cavc);
-
-    font-family: "Bebas Neue", sans-serif;
-
-    font-size: 2rem;
+    font-weight: 900;
 
     letter-spacing: 1px;
 
 }
 
+.player-top h3 {
 
-/* ==========================================================
-   IDENTIDADE DOS JOGADORES
-========================================================== */
+    font-family: "Bebas Neue", sans-serif;
 
-.player-nationality {
+    font-size: 1.9rem;
 
-    display: inline-flex;
+    line-height: .95;
 
-    align-items: center;
+    color: #0B4F2F;
 
-    gap: 6px;
+}
 
-    margin-top: 8px;
+.player-flag {
 
-    color: rgba(255, 255, 255, .7);
+    font-size: 1.5rem;
+
+}
+
+.player-country {
+
+    margin: 8px 0 18px;
+
+    color: #777;
 
     font-size: .8rem;
 
 }
 
+.player-data {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 8px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #eee;
+
+}
+
+.player-data div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+
+}
+
+.player-data span {
+
+    color: #999;
+
+    font-size: .58rem;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+
+}
+
+.player-data strong {
+
+    color: #333;
+
+    font-size: .78rem;
+
+}
+
+.player-tag {
+
+    margin-top: 15px;
+
+    padding: 7px;
+
+    background: #f4ead0;
+
+    color: #8a6a00;
+
+    border-radius: 4px;
+
+    text-align: center;
+
+    font-size: .58rem;
+
+    font-weight: 900;
+
+    letter-spacing: .5px;
+
+}
+
+.featured-player {
+
+    border: 2px solid #C9A227;
+
+}
+
 
 /* ==========================================================
-   BLOCO DE IDENTIDADE DO ELENCO
+   IDENTIDADE DO CLUBE
 ========================================================== */
 
-.squad-banner {
+.football-identity {
 
-    position: relative;
-
-    min-height: 280px;
+    min-height: 500px;
 
     display: flex;
 
     align-items: center;
 
-    margin-bottom: 50px;
-
-    padding: 50px;
-
-    overflow: hidden;
-
-    border-radius: 22px;
-
     background:
 
         linear-gradient(
             90deg,
-            rgba(6, 44, 27, .98),
-            rgba(11, 79, 47, .8)
-        );
+            rgba(5, 25, 15, .95),
+            rgba(5, 25, 15, .55)
+        ),
+
+        url("imgs/kenji-banner.jpg") center/cover;
+
+}
+
+.identity-content {
 
     color: white;
 
 }
 
+.identity-content span {
 
-.squad-banner::after {
+    color: #C9A227;
 
-    content: "CAVC";
+    font-size: .7rem;
 
-    position: absolute;
+    font-weight: 800;
 
-    right: 30px;
+    letter-spacing: 3px;
 
-    bottom: -35px;
+}
 
-    color: rgba(255, 255, 255, .05);
+.identity-content h2 {
+
+    margin: 15px 0;
 
     font-family: "Bebas Neue", sans-serif;
 
-    font-size: 13rem;
+    font-size: 5rem;
+
+    line-height: .85;
 
 }
 
+.identity-content p {
 
-.squad-banner-content {
-
-    position: relative;
-
-    z-index: 1;
-
-    max-width: 600px;
-
-}
-
-
-.squad-banner h2 {
-
-    margin: 0 0 15px;
-
-    font-family: "Bebas Neue", sans-serif;
-
-    font-size: 3.5rem;
-
-}
-
-
-.squad-banner p {
-
-    max-width: 550px;
+    max-width: 430px;
 
     color: rgba(255, 255, 255, .75);
 
-    line-height: 1.8;
+    line-height: 1.7;
 
 }
 
@@ -911,13 +757,39 @@
 
 @media (max-width: 1100px) {
 
-    .players-grid {
+    .squad-grid {
 
         grid-template-columns: repeat(3, 1fr);
 
     }
 
-    .board-grid {
+    .president-feature {
+
+        grid-template-columns: 340px 1fr;
+
+        gap: 45px;
+
+    }
+
+}
+
+@media (max-width: 850px) {
+
+    .president-feature {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .president-image {
+
+        height: 420px;
+
+        max-width: 420px;
+
+    }
+
+    .squad-grid {
 
         grid-template-columns: repeat(2, 1fr);
 
@@ -925,8 +797,7 @@
 
 }
 
-
-@media (max-width: 900px) {
+@media (max-width: 600px) {
 
     .football-hero {
 
@@ -934,132 +805,91 @@
 
     }
 
+    .section-intro h2 {
 
-    .football-content {
-
-        padding: 70px 0;
-
-    }
-
-
-    .players-grid {
-
-        grid-template-columns: repeat(2, 1fr);
+        font-size: 3.2rem;
 
     }
 
+    .president-section,
+    .football-team-section,
+    .squad-section {
 
-    .staff-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .squad-header {
-
-        display: block;
+        padding: 75px 0;
 
     }
 
+    .president-content h2 {
 
-    .squad-header p {
-
-        margin-top: 15px;
-
-    }
-
-
-    .player-card.featured {
-
-        grid-column: span 2;
+        font-size: 3.5rem;
 
     }
 
-}
+    .president-facts {
 
+        gap: 25px;
 
-@media (max-width: 650px) {
+    }
 
-    .football-hero h1 {
+    .staff-banner-content {
+
+        left: 25px;
+
+        right: 25px;
+
+    }
+
+    .staff-banner-content h3 {
+
+        font-size: 2.7rem;
+
+    }
+
+    .squad-grid {
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+
+    }
+
+    .player-photo {
+
+        height: 210px;
+
+    }
+
+    .player-content {
+
+        padding: 14px;
+
+    }
+
+    .player-top h3 {
+
+        font-size: 1.55rem;
+
+    }
+
+    .player-data {
+
+        grid-template-columns: 1fr 1fr;
+
+    }
+
+    .identity-content h2 {
 
         font-size: 4rem;
 
     }
 
+}
 
-    .football-section-header h2 {
+@media (max-width: 400px) {
 
-        font-size: 2.8rem;
-
-    }
-
-
-    .board-grid {
+    .squad-grid {
 
         grid-template-columns: 1fr;
-
-    }
-
-
-    .players-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .player-card.featured {
-
-        display: block;
-
-        grid-column: span 1;
-
-    }
-
-
-    .player-card.featured .player-card-image {
-
-        height: 280px;
-
-    }
-
-
-    .squad-section {
-
-        padding: 35px 20px;
-
-        border-radius: 20px;
-
-    }
-
-
-    .squad-banner {
-
-        padding: 35px 25px;
-
-    }
-
-
-    .squad-banner h2 {
-
-        font-size: 2.8rem;
-
-    }
-
-
-    .staff-card {
-
-        align-items: flex-start;
-
-    }
-
-
-    .staff-card-image {
-
-        width: 85px;
-
-        height: 85px;
 
     }
 
